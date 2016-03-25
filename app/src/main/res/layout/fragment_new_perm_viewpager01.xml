@@ -1,0 +1,229 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dimen_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:padding="@dimen/dimen_10"
+                android:text="加热"
+                android:textColor="@color/text_color"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/fragment_new_perm_viewpager01_Warm"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:background="@null"
+                android:hint="点击设置"
+                android:singleLine="true"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_0.5"
+            android:background="@color/line_color" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:padding="@dimen/dimen_10"
+                android:text="补加热"
+                android:textColor="@color/text_color"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/fragment_new_perm_viewpager01_Patch"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:background="@null"
+                android:hint="点击设置"
+                android:singleLine="true"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_0.5"
+            android:background="@color/line_color" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:padding="@dimen/dimen_10"
+                android:text="自然停放"
+                android:textColor="@color/text_color"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/fragment_new_perm_viewpager01_Park"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:background="@null"
+                android:hint="点击设置"
+                android:singleLine="true"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_0.5"
+            android:background="@color/line_color" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/fragment_new_perm_viewpager01_ImgLabel01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/img_label" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/fragment_new_perm_viewpager01_ImgLabel01"
+                    android:layout_alignLeft="@id/fragment_new_perm_viewpager01_ImgLabel01"
+                    android:layout_alignRight="@id/fragment_new_perm_viewpager01_ImgLabel01"
+                    android:layout_alignTop="@id/fragment_new_perm_viewpager01_ImgLabel01"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/dimen_5"
+                    android:text="烫前效果"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/fragment_new_perm_viewpager01_ImgLabel02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/img_label" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/fragment_new_perm_viewpager01_ImgLabel02"
+                    android:layout_alignLeft="@id/fragment_new_perm_viewpager01_ImgLabel02"
+                    android:layout_alignRight="@id/fragment_new_perm_viewpager01_ImgLabel02"
+                    android:layout_alignTop="@id/fragment_new_perm_viewpager01_ImgLabel02"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/dimen_5"
+                    android:text="烫后效果"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="@dimen/dimen_10"
+                android:paddingRight="@dimen/dimen_10">
+
+                <ImageView
+                    android:id="@+id/fragment_new_perm_viewpager01_ImgBackground01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/img_picture_background" />
+
+                <ImageView
+                    android:id="@+id/fragment_new_perm_viewpager01_ImageView01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/fragment_new_perm_viewpager01_ImgBackground01"
+                    android:layout_alignLeft="@id/fragment_new_perm_viewpager01_ImgBackground01"
+                    android:layout_alignRight="@id/fragment_new_perm_viewpager01_ImgBackground01"
+                    android:layout_alignTop="@id/fragment_new_perm_viewpager01_ImgBackground01"
+                    android:layout_margin="@dimen/dimen_20"
+                    android:src="@mipmap/ic_company_profile" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="@dimen/dimen_10"
+                android:paddingRight="@dimen/dimen_10">
+
+                <ImageView
+                    android:id="@+id/fragment_new_perm_viewpager01_ImgBackground02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/img_picture_background" />
+
+                <ImageView
+                    android:id="@+id/fragment_new_perm_viewpager01_ImageView02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/fragment_new_perm_viewpager01_ImgBackground02"
+                    android:layout_alignLeft="@id/fragment_new_perm_viewpager01_ImgBackground02"
+                    android:layout_alignRight="@id/fragment_new_perm_viewpager01_ImgBackground02"
+                    android:layout_alignTop="@id/fragment_new_perm_viewpager01_ImgBackground02"
+                    android:layout_margin="@dimen/dimen_20"
+                    android:src="@mipmap/ic_company_profile" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

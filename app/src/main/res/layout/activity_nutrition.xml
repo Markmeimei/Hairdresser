@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.eron.hairdresser.views.headTitle.HeadTitle xmlns:title="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/activity_nutrition_HeadTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50"
+        title:imgLeft="@mipmap/head_title_return"
+        title:titleRight="@string/head_title_new_record"
+        title:titleCenter="@string/head_title_nutrition"
+        title:titleLeft="@string/head_title_customer" />
+
+    <ListView
+        android:id="@+id/activity_nutrition_ListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null"
+        android:scrollbars="none" />
+</LinearLayout>

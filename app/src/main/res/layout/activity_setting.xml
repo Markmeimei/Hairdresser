@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <com.eron.hairdresser.views.headTitle.HeadTitle xmlns:title="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/activity_setting_HeadTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50"
+        title:imgLeft="@mipmap/head_title_return"
+        title:titleCenter="@string/head_title_setting"
+        title:titleLeft="@string/head_title_hairdresser" />
+
+    <ListView
+        android:id="@+id/activity_setting_ListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:background="@color/white" />
+
+    <Button
+        android:id="@+id/activity_setting_Exit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:background="@color/white"
+        android:text="退出登录"
+        android:textColor="@color/text_color"
+        android:textSize="18sp" />
+</LinearLayout>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dimen_3">
+
+    <LinearLayout
+        android:id="@+id/adapter_birthday_activity_listview_LinearLayout_Up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/dimen_10">
+
+        <ImageView
+            android:layout_width="@dimen/dimen_80"
+            android:layout_height="@dimen/dimen_80"
+            android:src="@mipmap/tx" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dimen_10"
+            android:paddingRight="@dimen/dimen_10">
+
+            <TextView
+                android:id="@+id/adapter_birthday_activity_listview_Date"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:padding="@dimen/dimen_5"
+                android:text="今天是    2016年3月14日\n                阴历  二月初六"
+                android:textColor="@color/text_color"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_0.5"
+                android:background="@color/line_color" />
+
+            <TextView
+                android:id="@+id/adapter_birthday_activity_listview_Name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="@dimen/dimen_5"
+                android:text="今天是  小明  先生  25  岁生日"
+                android:textColor="@color/text_color"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_0.5"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        android:id="@+id/adapter_birthday_activity_listview_LinearLayout_Down"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_5"
+        android:background="@color/white"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/dimen_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/adapter_birthday_activity_listview_CheckBox_A"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_70"
+                android:layout_margin="@dimen/dimen_10"
+                android:layout_weight="1"
+                android:background="@drawable/selector_adapter_birthday_activity_listview_checkbox01"
+                android:button="@null"
+                android:gravity="center"
+                android:text="信息模板A"
+                android:textColor="@color/text_color"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/adapter_birthday_activity_listview_CheckBox_B"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_70"
+                android:layout_margin="@dimen/dimen_10"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/selector_adapter_birthday_activity_listview_checkbox02"
+                android:text="信息模板B"
+                android:button="@null"
+                android:textColor="@color/text_color"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/adapter_birthday_activity_listview_CheckBox_C"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="@dimen/dimen_70"
+                android:layout_margin="@dimen/dimen_10"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/selector_adapter_birthday_activity_listview_checkbox03"
+                android:text="信息模板C"
+                android:textColor="@color/text_color"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/adapter_birthday_activity_listview_Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_45"
+            android:layout_marginLeft="@dimen/dimen_20"
+            android:layout_marginRight="@dimen/dimen_20"
+            android:background="@drawable/selector_adapter_birthday_activity_listview_button"
+            android:text="编辑短信"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_60"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_10">
+
+            <View
+                android:layout_width="@dimen/dimen_0.5"
+                android:layout_height="match_parent"
+                android:background="@color/line_color" />
+
+            <TextView
+                android:id="@+id/adapter_birthday_activity_listview_Call"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_10"
+                android:layout_weight="1"
+                android:drawableLeft="@mipmap/img_adapter_birthday_activity_listview_phone"
+                android:gravity="center"
+                android:text="电话祝福"
+                android:textColor="@color/text_color"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="@dimen/dimen_0.5"
+                android:layout_height="match_parent"
+                android:background="@color/line_color" />
+
+            <TextView
+                android:id="@+id/adapter_birthday_activity_listview_Ignore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_10"
+                android:layout_weight="1"
+                android:drawableLeft="@mipmap/img_adapter_birthday_activity_listview_phone"
+                android:gravity="center"
+                android:text="忽略"
+                android:textColor="@color/text_color"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="@dimen/dimen_0.5"
+                android:layout_height="match_parent"
+                android:background="@color/line_color" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

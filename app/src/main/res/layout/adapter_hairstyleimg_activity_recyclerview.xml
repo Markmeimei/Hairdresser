@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_5"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="2dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:id="@+id/adapter_hairstyleimg_activity_recyclerview_RelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/adapter_hairstyleimg_activity_recyclerview_ImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_company_profile" />
+
+        <TextView
+            android:id="@+id/adapter_hairstyleimg_activity_recyclerview_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/adapter_hairstyleimg_activity_recyclerview_ImageView"
+            android:layout_alignRight="@id/adapter_hairstyleimg_activity_recyclerview_ImageView"
+            android:layout_below="@id/adapter_hairstyleimg_activity_recyclerview_ImageView"
+            android:background="@color/white"
+            android:gravity="center"
+            android:padding="@dimen/dimen_3"
+            android:text="发型一"
+            android:textColor="@color/text_color"
+            android:textSize="16sp" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--主题颜色-->
+    <color name="color_theme">#E93838</color>
+    <!--线的颜色-->
+    <color name="line_color">#D6D6D6</color>
+    <!--按钮点击颜色-->
+    <color name="button_pressed_color">#D6D6D6</color>
+    <!--tab背景颜色-->
+    <color name="tab_background_color">#F5F5F5</color>
+    <!--tab字体选中时颜色-->
+    <color name="tab_text_background_color_down">#E93838</color>
+    <!--tab字体未选中时颜色-->
+    <color name="tab_text_background_color_up">#777777</color>
+    <!--head_title字体颜色-->
+    <color name="head_title_text">#F0F0F0</color>
+    <!--暂时背景颜色-->
+    <color name="background">#EDEDED</color>
+    <!--全部字体颜色-->
+    <color name="text_color">#777777</color>
+    <color name="text_color1">#323232</color>
+    <color name="text_color2">#5FA8EC</color>
+    <!--全部按钮颜色-->
+    <color name="button_color">#FF9536</color>
+
+    <!--顾客烫染卡类颜色-->
+    <color name="adapter_permdye_activity_listview_8zhe">#EF3D31</color>
+    <color name="adapter_permdye_activity_listview_ganen">#8B6BAC</color>
+    <color name="adapter_hairdressing_activity_listview_8zhe">#EF3D31</color>
+    <color name="adapter_hairdressing_activity_listview_ganen">#8B6BAC</color>
+    <color name="adapter_nutrition_activity_listview_8zhe">#EF3D31</color>
+    <color name="adapter_nutrition_activity_listview_ganen">#8B6BAC</color>
+    <color name="adapter_spa_activity_listview_8zhe">#EF3D31</color>
+    <color name="adapter_spa_activity_listview_ganen">#8B6BAC</color>
+    <!--生日提示信息模板颜色-->
+    <color name="adapter_birthday_activity_listview_checkbox01">#FF7373</color>
+    <color name="adapter_birthday_activity_listview_checkbox02">#5FA8EC</color>
+    <color name="adapter_birthday_activity_listview_checkbox03">#D7E070</color>
+    <!--烫染填写的按钮颜色-->
+    <color name="include_new_perm_color">#FF7373</color>
+
+    <!--颜色值-->
+    <color name="white">#FFFFFF</color><!--白色 -->
+    <color name="transparency">#00000000</color><!--透明色-->
+    <color name="blue">#0000FF</color><!--蓝色 -->
+    <color name="black">#000000</color><!--黑色 -->
+    <color name="dialog_btn_pressed">#0397fc</color>
+
+</resources>

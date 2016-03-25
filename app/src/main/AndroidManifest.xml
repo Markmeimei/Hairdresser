@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.eron.hairdresser">
+
+    <!-- 打电话 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- 发送短信 -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- 访问网络 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    // 允许应用写（非读）用户的外部存储器
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="com.lin.framwork.application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".register.Login_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TabHost_Activity" />
+        <activity android:name=".hairdresser.setting.Setting_Activity" />
+        <activity android:name=".read.companyProfile.CompanyProfile_Activity" />
+        <activity android:name=".customer.permDye.PermDye_Activity" />
+        <activity android:name=".home.birthday.Birthday_Activity" />
+        <activity android:name=".customer.nutrition.Nutrition_Activity" />
+        <activity android:name=".customer.SPA.SPA_Activity" />
+        <activity android:name=".customer.hairdressing.Hairdressing_Activity" />
+        <activity android:name=".customer.Details_Activity" />
+        <activity android:name=".read.hairStyleImg.HairStyleImg_Activity" />
+        <activity android:name=".customer.newUser.NewUser_Activity" />
+        <activity android:name=".home.expire.Expire_Activity" />
+        <activity android:name=".customer.newUser.NewRecord_Activity" />
+        <activity android:name=".addform.AddForm_Activity"></activity>
+    </application>
+
+</manifest>

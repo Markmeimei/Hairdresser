@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.eron.hairdresser.views.headTitle.HeadTitle xmlns:title="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50"
+        title:imgLeft="@mipmap/head_title_return"
+        title:titleCenter="@string/head_title_expire"
+        title:titleLeft="@string/head_title_home" />
+
+    <RadioGroup
+        android:id="@+id/activity_expire_RadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dimen_5"
+        android:paddingTop="@dimen/dimen_10">
+
+        <RadioButton
+            android:id="@+id/activity_expire_RadioButton01"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="烫发"
+            android:textColor="@color/text_color"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/activity_expire_RadioButton02"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="染发"
+            android:textColor="@color/text_color"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/activity_expire_RadioButton03"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="营养"
+            android:textColor="@color/text_color"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/activity_expire_RadioButton04"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="头皮SPA"
+            android:textColor="@color/text_color"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/activity_expire_RadioButton05"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="美容"
+            android:textColor="@color/text_color"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_0.5"
+        android:background="@color/line_color" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/activity_expire_ViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background" />
+
+</LinearLayout>

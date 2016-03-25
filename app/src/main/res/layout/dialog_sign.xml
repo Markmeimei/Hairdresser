@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_dialog_bg"
+    android:orientation="vertical" >
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="70dp"
+      style="@style/titleFont"
+      android:gravity="center"
+      android:background="@drawable/shape_textview_bg"
+      android:id="@+id/dialog_tx"/>
+
+    <FrameLayout
+        android:id="@+id/dialog_fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/dialog_tx"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/linearLayout4">
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout4">
+
+        <Button
+            android:id="@+id/dialog_btn_confirm"
+            android:layout_width="0dp"
+            style="@style/titleFont"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_dialog_btn"
+            android:text="@string/dialog_confirm"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/dialog_btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_cancle_btn"
+            style="@style/titleFont"
+            android:text="@string/dialog_cancel"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</RelativeLayout>
