@@ -17,10 +17,16 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.eron.hairdresser.R;
+import com.eron.hairdresser.adapter.AddForm_Activity_ListView_Adapter;
+import com.eron.hairdresser.model.AddForm_Model;
 import com.eron.hairdresser.views.dialog.Dialog_Sign;
 import com.eron.hairdresser.views.headTitle.HeadTitle;
+import com.lin.framwork.views.ListViewForScrollView_Control.ListViewForScrollView;
+import com.lin.framwork.views.Toast_Control.Toast_Common;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -70,14 +76,6 @@ public class AddForm_Activity extends AppCompatActivity {
     TextView activityAddFormPermDye;
     @Bind(R.id.activity_add_form_Type03)
     TextView activityAddFormType03;
-    @Bind(R.id.activity_add_form_Money)
-    TextView activityAddFormMoney;
-    @Bind(R.id.activity_add_form_TakeOut)
-    TextView activityAddFormTakeOut;
-    @Bind(R.id.activity_add_form_Cost)
-    TextView activityAddFormCost;
-    @Bind(R.id.activity_add_form_Practical)
-    TextView activityAddFormPractical;
     @Bind(R.id.activity_add_form_Cashier)
     TextView activityAddFormCashier;
     @Bind(R.id.activity_add_form_Manager)
@@ -110,19 +108,41 @@ public class AddForm_Activity extends AppCompatActivity {
     ImageView activityAddFormImageView;
     @Bind(R.id.add_customer_sign)
     RelativeLayout addCustomerSign;
+    @Bind(R.id.activity_add_form_ListViewForScrollView)
+    ListViewForScrollView activityAddFormListViewForScrollView;
 
     private Context context;
     private String path = Environment.getExternalStorageDirectory().getPath()
             + "/HairDresser/sign/"; // 图片地址
 
+    private AddForm_Activity_ListView_Adapter listView_adapter;
+    private List<AddForm_Model> modelList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_form);
         ButterKnife.bind(this);
         initConstants();
+        Init();
     }
-
+    private void Init() {
+        modelList = new ArrayList<>();
+        AddForm_Model model = new AddForm_Model();
+        List<String> strings = new ArrayList<>();
+        List<String> strings2 = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            strings.add(i + "项目");
+            strings2.add(i + "金额");
+        }
+        model.setProject(strings);
+        model.setMoney(strings2);
+        modelList.add(model);
+        listView_adapter = new AddForm_Activity_ListView_Adapter(this, modelList);
+        Content();
+    }
+    private void Content() {
+        activityAddFormListViewForScrollView.setAdapter(listView_adapter);
+    }
     private void initConstants() {
         context = this;
     }
@@ -133,7 +153,6 @@ public class AddForm_Activity extends AppCompatActivity {
             R.id.activity_add_form_RadioButton23_Up, R.id.activity_add_form_RadioGroup02_Up, R.id.activity_add_form_EditText02,
             R.id.activity_add_form_LinearLayout_For_EditText02, R.id.activity_add_form_Stylist, R.id.activity_add_form_Type01,
             R.id.activity_add_form_Hairdressing, R.id.activity_add_form_Type02, R.id.activity_add_form_PermDye, R.id.activity_add_form_Type03,
-            R.id.activity_add_form_Money, R.id.activity_add_form_TakeOut, R.id.activity_add_form_Cost, R.id.activity_add_form_Practical,
             R.id.activity_add_form_Cashier, R.id.activity_add_form_Manager, R.id.activity_add_form_Submit, R.id.activity_add_form_TextView01,R.id.add_customer_sign})
     public void onClick(View view) {
         switch (view.getId()) {
@@ -175,21 +194,11 @@ public class AddForm_Activity extends AppCompatActivity {
                 break;
             case R.id.activity_add_form_Type03:
                 break;
-            case R.id.activity_add_form_Money:
-                break;
-            case R.id.activity_add_form_TakeOut:
-                break;
-            case R.id.activity_add_form_Cost:
-                break;
-            case R.id.activity_add_form_Practical:
-                break;
             case R.id.activity_add_form_Cashier:
                 break;
             case R.id.activity_add_form_Manager:
                 break;
             case R.id.activity_add_form_Submit:
-                break;
-            case R.id.activity_add_form_Add:
                 break;
             case R.id.activity_add_form_TextView01:
 
@@ -207,6 +216,21 @@ public class AddForm_Activity extends AppCompatActivity {
                             }
                         })
                         .show();
+                break;
+            case R.id.activity_add_form_Add:
+                // 添加项目
+                Toast_Common.DefaultToast(this, "添加项目");
+                AddForm_Model model = new AddForm_Model();
+                List<String> strings = new ArrayList<>();
+                List<String> strings2 = new ArrayList<>();
+                for (int i = 0; i < 10; i++) {
+                    strings.add(i + "项目");
+                    strings2.add(i + "金额");
+                }
+                model.setProject(strings);
+                model.setMoney(strings2);
+                modelList.add(model);
+                listView_adapter.notifyDataSetChanged();
                 break;
         }
     }

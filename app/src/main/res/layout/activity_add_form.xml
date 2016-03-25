@@ -5,8 +5,7 @@
     android:background="@color/background"
     android:orientation="vertical">
 
-    <com.eron.hairdresser.views.headTitle.HeadTitle
-        xmlns:title="http://schemas.android.com/apk/res-auto"
+    <com.eron.hairdresser.views.headTitle.HeadTitle xmlns:title="http://schemas.android.com/apk/res-auto"
         android:id="@+id/fragment_home_HeadTitle"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_50"
@@ -25,7 +24,43 @@
             android:layout_marginTop="@dimen/dimen_10"
             android:orientation="vertical">
 
+            <RelativeLayout
+                android:id="@+id/add_customer_sign"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/dimen_10">
 
+                <TextView
+                    android:id="@+id/activity_add_form_TextView01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:text="顾客签名"
+                    android:textColor="@color/text_color"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/activity_add_form_Smallicon01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/head_title_advance" />
+
+                <ImageView
+                    android:id="@+id/activity_add_form_ImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toLeftOf="@id/activity_add_form_Smallicon01"
+                    android:layout_toRightOf="@id/activity_add_form_TextView01"
+                    android:paddingLeft="@dimen/dimen_10"
+                    android:paddingRight="@dimen/dimen_10"
+                    android:src="@mipmap/icon_perm_before" />
+            </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
@@ -464,145 +499,10 @@
                 android:layout_height="@dimen/dimen_0.5"
                 android:background="@color/line_color" />
 
-            <LinearLayout
+            <com.lin.framwork.views.ListViewForScrollView_Control.ListViewForScrollView
+                android:id="@+id/activity_add_form_ListViewForScrollView"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_50"
-                android:layout_marginTop="@dimen/dimen_10"
-                android:background="@color/white"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="@dimen/dimen_10">
-
-                <TextView
-                    android:layout_width="@dimen/dimen_0"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.4"
-                    android:text="金额"
-                    android:textColor="@color/text_color"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/activity_add_form_Money"
-                    android:layout_width="@dimen/dimen_0"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.6"
-                    android:hint="点击设置"
-                    android:textColor="@color/text_color"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/head_title_advance" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_0.5"
-                android:background="@color/line_color" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_50"
-                android:background="@color/white"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="@dimen/dimen_10">
-
-                <TextView
-                    android:layout_width="@dimen/dimen_0"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.4"
-                    android:text="外卖"
-                    android:textColor="@color/text_color"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/activity_add_form_TakeOut"
-                    android:layout_width="@dimen/dimen_0"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.6"
-                    android:hint="点击设置"
-                    android:textColor="@color/text_color"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/head_title_advance" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_0.5"
-                android:background="@color/line_color" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_50"
-                android:background="@color/white"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="@dimen/dimen_10">
-
-                <TextView
-                    android:layout_width="@dimen/dimen_0"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.4"
-                    android:text="成本"
-                    android:textColor="@color/text_color"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/activity_add_form_Cost"
-                    android:layout_width="@dimen/dimen_0"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.6"
-                    android:hint="点击设置"
-                    android:textColor="@color/text_color"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/head_title_advance" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_0.5"
-                android:background="@color/line_color" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_50"
-                android:background="@color/white"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="@dimen/dimen_10">
-
-                <TextView
-                    android:layout_width="@dimen/dimen_0"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.4"
-                    android:text="实收"
-                    android:textColor="@color/text_color"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/activity_add_form_Practical"
-                    android:layout_width="@dimen/dimen_0"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.6"
-                    android:hint="点击设置"
-                    android:textColor="@color/text_color"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/head_title_advance" />
-            </LinearLayout>
+                android:layout_height="wrap_content"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -799,42 +699,7 @@
                     android:textColor="@color/text_color"
                     android:textSize="16sp" />
             </RadioGroup>
-            <RelativeLayout
-                android:id="@+id/add_customer_sign"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:orientation="horizontal"
-                android:padding="@dimen/dimen_10">
 
-                <TextView
-                    android:id="@+id/activity_add_form_TextView01"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerInParent="true"
-                    android:text="顾客签名"
-                    android:textColor="@color/text_color"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:id="@+id/activity_add_form_Smallicon01"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerInParent="true"
-                    android:src="@mipmap/head_title_advance" />
-
-                <ImageView
-                    android:id="@+id/activity_add_form_ImageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_below="@id/activity_add_form_TextView01"
-                    android:paddingLeft="@dimen/dimen_10"
-                    android:paddingRight="@dimen/dimen_10"
-                    android:src="@mipmap/icon_perm_before" />
-            </RelativeLayout>
             <Button
                 android:id="@+id/activity_add_form_Submit"
                 android:layout_width="match_parent"

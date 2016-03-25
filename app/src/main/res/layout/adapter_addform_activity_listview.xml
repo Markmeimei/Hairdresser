@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/dimen_5">
+
+        <LinearLayout
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_5">
+
+            <TextView
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="名称"
+                android:textColor="@color/text_color"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/adapter_addform_activity_listview_Project"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="match_parent"
+                android:layout_weight="0.7"
+                android:textColor="@color/text_color"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/dimen_0.5"
+            android:layout_height="match_parent"
+            android:background="@color/line_color" />
+
+        <LinearLayout
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_5">
+
+            <TextView
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="金额"
+                android:textColor="@color/text_color"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/adapter_addform_activity_listview_Money"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="match_parent"
+                android:layout_weight="0.7"
+                android:textColor="@color/text_color"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/adapter_addform_activity_listview_Delete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingRight="@dimen/dimen_5"
+            android:src="@mipmap/img_delete" />
+    </LinearLayout>
+</LinearLayout>

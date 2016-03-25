@@ -83,7 +83,9 @@ public class Login_Activity extends AppCompatActivity {
                 if (activityLoginAccount.getText().toString().equals("") && activityLoginPassword.getText().toString().equals(""))
                     Toast_Common.DefaultToast(this, "请输入账号或密码！");
                 else
-                    LoginIn();
+//                    LoginIn();
+                    IntentUtil.goToContext(Login_Activity.this, TabHost_Activity.class);
+                    Login_Activity.this.finish();
                 break;
             case R.id.activity_login_Forget:
                 Toast_Common.CenterToast(this, "忘记密码");
