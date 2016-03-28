@@ -38,7 +38,9 @@
         <activity android:name=".customer.newUser.NewUser_Activity" />
         <activity android:name=".home.expire.Expire_Activity" />
         <activity android:name=".customer.newUser.NewRecord_Activity" />
-        <activity android:name=".addform.AddForm_Activity"></activity>
+        <activity android:name=".addform.AddForm_Activity" />
+        <activity android:name=".read.product.Product_Activity" />
+        <activity android:name=".read.product.ProductDetails_Activity"></activity>
     </application>
 
 </manifest>

@@ -83,9 +83,7 @@ public class Login_Activity extends AppCompatActivity {
                 if (activityLoginAccount.getText().toString().equals("") && activityLoginPassword.getText().toString().equals(""))
                     Toast_Common.DefaultToast(this, "请输入账号或密码！");
                 else
-//                    LoginIn();
-                    IntentUtil.goToContext(Login_Activity.this, TabHost_Activity.class);
-                    Login_Activity.this.finish();
+                    LoginIn();
                 break;
             case R.id.activity_login_Forget:
                 Toast_Common.CenterToast(this, "忘记密码");
@@ -103,23 +101,24 @@ public class Login_Activity extends AppCompatActivity {
             @Override
             public void onSuccess(String result, List list) {
                 List<LoginResult_Model> modelList = list;
-                if (modelList.get(0).getError().equals("0")) {
-                    if (activityLoginRemember.isChecked()) {
-                        SharedPreferencesUtil.put(Login_Activity.this, "userName", activityLoginAccount.getText().toString());
-                        SharedPreferencesUtil.put(Login_Activity.this, "passWord", activityLoginPassword.getText().toString());
-                        SharedPreferencesUtil.put(Login_Activity.this, "rememberPassWord", true);
-                    } else {
-                        SharedPreferencesUtil.remove(Login_Activity.this, "userName");
-                        SharedPreferencesUtil.remove(Login_Activity.this, "passWord");
-                        SharedPreferencesUtil.remove(Login_Activity.this, "rememberPassWord");
-                    }
-                    ApplicarionTools.setUserId(modelList.get(0).getUid());
-                    Toast_Common.DefaultToast(Login_Activity.this, "登陆成功！");
-                    IntentUtil.goToContext(Login_Activity.this, TabHost_Activity.class);
-                    Login_Activity.this.finish();
-                } else {
-                    Toast_Common.DefaultToast(Login_Activity.this, "用户名或密码输入错误！");
-                }
+                Log.e(Tag, modelList.get(0).getCode() + "----" + modelList.get(0).getMessage() + "----" + modelList.get(0).getObject());
+//                if (modelList.get(0).getError().equals("0")) {
+//                    if (activityLoginRemember.isChecked()) {
+//                        SharedPreferencesUtil.put(Login_Activity.this, "userName", activityLoginAccount.getText().toString());
+//                        SharedPreferencesUtil.put(Login_Activity.this, "passWord", activityLoginPassword.getText().toString());
+//                        SharedPreferencesUtil.put(Login_Activity.this, "rememberPassWord", true);
+//                    } else {
+//                        SharedPreferencesUtil.remove(Login_Activity.this, "userName");
+//                        SharedPreferencesUtil.remove(Login_Activity.this, "passWord");
+//                        SharedPreferencesUtil.remove(Login_Activity.this, "rememberPassWord");
+//                    }
+//                    ApplicarionTools.setUserId(modelList.get(0).getUid());
+//                    Toast_Common.DefaultToast(Login_Activity.this, "登陆成功！");
+//                    IntentUtil.goToContext(Login_Activity.this, TabHost_Activity.class);
+//                    Login_Activity.this.finish();
+//                } else {
+//                    Toast_Common.DefaultToast(Login_Activity.this, "用户名或密码输入错误！");
+//                }
             }
 
             @Override

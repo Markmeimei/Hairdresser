@@ -26,6 +26,7 @@ import butterknife.OnClick;
 import butterknife.OnItemClick;
 
 public class Hairdressing_Activity extends AppCompatActivity {
+    public final static String Tag = "Hairdressing_Activity";
 
     @Bind(R.id.activity_hairdressing_HeadTitle)
     HeadTitle activityHairdressingHeadTitle;
@@ -33,8 +34,7 @@ public class Hairdressing_Activity extends AppCompatActivity {
     ListView activityHairdressingListView;
     @Bind(R.id.activity_hairdressing_Filtrate)
     TextView activityHairdressingFiltrate;
-    @Bind(R.id.activity_hairdressing_LinearLayout)
-    LinearLayout activityHairdressingLinearLayout;
+
     private Hairdressing_Activity_ListView_Adapter listView_adapter;
 
     @Override
@@ -68,7 +68,7 @@ public class Hairdressing_Activity extends AppCompatActivity {
         activityHairdressingHeadTitle.setRightOnclick(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IntentUtil.goToContext(Hairdressing_Activity.this, NewRecord_Activity.class, IntentTag.newRecordTag, IntentTag.getNewRecordBase(4));
+                IntentUtil.goToContext(Hairdressing_Activity.this, NewRecord_Activity.class, IntentTag.newRecordTag, Tag);
             }
         });
 

@@ -11,31 +11,31 @@ public class LoginResult_Model {
      * uid : 1
      */
 
-    private String error;
-    private String msg;
-    private String uid;
+    private String code;
+    private String message;
+    private String object;
 
-    public String getError() {
-        return error;
+    public String getCode() {
+        return code;
     }
 
-    public void setError(String error) {
-        this.error = error;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public String getMsg() {
-        return msg;
+    public String getMessage() {
+        return message;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
-    public String getUid() {
-        return uid;
+    public String getObject() {
+        return object;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid;
+    public void setObject(String object) {
+        this.object = object;
     }
 }

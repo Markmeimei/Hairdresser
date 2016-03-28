@@ -84,6 +84,8 @@ public class Birthday_Activity_ListView_Adapter extends BaseAdapter {
     }
 
     private void allClick(final ViewHolder holder, final int position) {
+        final CheckBox checkbox;
+
         holder.adapterBirthdayActivityListviewLinearLayoutUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

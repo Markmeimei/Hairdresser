@@ -19,9 +19,11 @@
     <string name="head_title_hairdressing">美容记录</string>
     <string name="head_title_nutrition">营养记录</string>
     <string name="head_title_spa">头皮SPA</string>
-    <string name="head_title_details">详细资料</string>
+    <string name="head_title_details">产品资料</string>
+    <string name="head_title_details_details">详细资料</string>
     <string name="head_title_birthday_remind">生日提醒</string>
     <string name="head_title_hair_style_img">发型图片</string>
+    <string name="head_title_product">产品资料</string>
     <string name="head_title_new_user">添加会员</string>
     <string name="head_title_new_record">添加记录</string>
     <string name="head_title_expire">到期顾客</string>
@@ -66,6 +68,10 @@
     <string name="activity_details_product2">产&#160;&#160;品&#160;&#160;&#160;&#160;</string>
     <string name="activity_details_type">类&#160;&#160;型&#160;&#160;&#160;&#160;</string>
     <string name="activity_details_satisfaction">满&#160;意&#160;度&#160;&#160;&#160;&#160;</string>
+    <string name="activity_details_mask">发&#160;&#160;膜&#160;&#160;&#160;&#160;</string>
+    <string name="activity_details_assistant">助&#160;&#160;理&#160;&#160;&#160;&#160;</string>
+    <string name="activity_details_appointmenttime">下次预约时间&#160;&#160;&#160;&#160;</string>
+    <string name="activity_details_appointmentperson">预&#160;约&#160;人&#160;&#160;&#160;&#160;</string>
     <string name="activity_details_analyze">进入分析</string>
     <string name="activity_details_remind">提醒设置</string>
 

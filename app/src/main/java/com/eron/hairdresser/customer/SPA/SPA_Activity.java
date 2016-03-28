@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.eron.hairdresser.R;
 import com.eron.hairdresser.adapter.SPA_Activity_ListView_Adapter;
@@ -13,20 +14,25 @@ import com.eron.hairdresser.customer.newUser.NewRecord_Activity;
 import com.eron.hairdresser.model.Customer_Model;
 import com.eron.hairdresser.views.headTitle.HeadTitle;
 import com.lin.framwork.utils.IntentUtil;
+import com.lin.framwork.views.PopupWindow_Control.PopupWindowListView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.OnItemClick;
 
 public class SPA_Activity extends AppCompatActivity {
+    public final static String Tag = "SPA_Activity";
 
     @Bind(R.id.activity_spa_HeadTitle)
     HeadTitle activitySpaHeadTitle;
     @Bind(R.id.activity_spa_ListView)
     ListView activitySpaListView;
+    @Bind(R.id.activity_spa_Filtrate)
+    TextView activitySpaFiltrate;
 
     private SPA_Activity_ListView_Adapter listView_adapter;
 
@@ -61,7 +67,7 @@ public class SPA_Activity extends AppCompatActivity {
         activitySpaHeadTitle.setRightOnclick(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IntentUtil.goToContext(SPA_Activity.this, NewRecord_Activity.class, IntentTag.newRecordTag, IntentTag.getNewRecordBase(3));
+                IntentUtil.goToContext(SPA_Activity.this, NewRecord_Activity.class, IntentTag.newRecordTag, Tag);
             }
         });
         activitySpaListView.setAdapter(listView_adapter);
@@ -69,6 +75,26 @@ public class SPA_Activity extends AppCompatActivity {
 
     @OnItemClick(R.id.activity_spa_ListView)
     public void onItemClick(int position) {
-        IntentUtil.goToContext(this, Details_Activity.class);
+        IntentUtil.goToContext(this, Details_Activity.class, IntentTag.DetailsTag, Tag);
+    }
+
+    @OnClick(R.id.activity_spa_Filtrate)
+    public void onClick() {
+        List<String> strings = new ArrayList<>();
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        PopupWindowListView windowListView = new PopupWindowListView(this, strings);
+        windowListView.showPopupWindow(activitySpaFiltrate);
     }
 }
