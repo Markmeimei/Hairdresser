@@ -121,5 +121,22 @@
             android:text="发长   短"
             android:textColor="@color/text_color"
             android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_0.5"
+            android:background="@color/line_color" />
+
+        <TextView
+            android:id="@+id/views_details_first_Phone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_0"
+            android:layout_weight="1"
+            android:paddingBottom="@dimen/dimen_10"
+            android:paddingTop="@dimen/dimen_10"
+            android:singleLine="true"
+            android:text="电话   短"
+            android:textColor="@color/text_color"
+            android:textSize="16sp" />
     </LinearLayout>
 </LinearLayout>

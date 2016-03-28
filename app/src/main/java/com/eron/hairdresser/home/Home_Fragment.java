@@ -15,6 +15,7 @@ import com.eron.hairdresser.home.expire.Expire_Activity;
 import com.eron.hairdresser.views.headTitle.HeadTitle;
 import com.lin.framwork.utils.ASimpleCache;
 import com.lin.framwork.utils.IntentUtil;
+import com.lin.framwork.views.PopupWindow_Control.PopupWindowListView;
 import com.lin.framwork.views.Toast_Control.Toast_Common;
 
 import java.util.ArrayList;
@@ -83,7 +84,7 @@ public class Home_Fragment extends Fragment {
         else if (position == 2) {
             IntentUtil.goToContext(getActivity(), Birthday_Activity.class);
         } else {
-            Toast_Common.CenterToast(getActivity(), position + "");
+
         }
     }
 }

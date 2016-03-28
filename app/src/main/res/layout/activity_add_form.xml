@@ -44,11 +44,9 @@
 
                 <ImageView
                     android:id="@+id/activity_add_form_Smallicon01"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:paddingLeft="@dimen/dimen_20"
-                    android:paddingRight="@dimen/dimen_20"
                     android:layout_centerInParent="true"
                     android:src="@mipmap/head_title_advance" />
 
@@ -59,8 +57,9 @@
                     android:layout_centerInParent="true"
                     android:layout_toLeftOf="@id/activity_add_form_Smallicon01"
                     android:layout_toRightOf="@id/activity_add_form_TextView01"
-                    android:paddingLeft="@dimen/dimen_10"
-                    android:paddingRight="@dimen/dimen_10"
+                    android:paddingLeft="@dimen/dimen_20"
+                    android:paddingRight="@dimen/dimen_20"
+                    android:scaleType="fitXY"
                     android:src="@mipmap/icon_perm_before" />
             </RelativeLayout>
 
@@ -504,7 +503,7 @@
             <com.lin.framwork.views.ListViewForScrollView_Control.ListViewForScrollView
                 android:id="@+id/activity_add_form_ListViewForScrollView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <LinearLayout
                 android:layout_width="match_parent"

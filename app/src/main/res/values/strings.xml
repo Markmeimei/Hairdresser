@@ -55,10 +55,15 @@
     <string name="activity_details_birthday">生&#160;&#160;日&#160;&#160;&#160;&#160;</string>
     <string name="activity_details_quality">品&#160;&#160;质&#160;&#160;&#160;&#160;</string>
     <string name="activity_details_hairlength">发&#160;&#160;长&#160;&#160;&#160;&#160;</string>
+    <string name="activity_details_phone">电&#160;&#160;话&#160;&#160;&#160;&#160;</string>
     <string name="activity_details_date">日&#160;&#160;期&#160;&#160;&#160;&#160;</string>
     <string name="activity_details_project">项&#160;&#160;目&#160;&#160;&#160;&#160;</string>
     <string name="activity_details_hairstylistname">发&#160;型&#160;师&#160;&#160;&#160;&#160;</string>
     <string name="activity_details_product">使用产品&#160;&#160;&#160;&#160;</string>
+    <string name="activity_details_storesuse">店&#160;&#160;用&#160;&#160;&#160;&#160;</string>
+    <string name="activity_details_furnishing">家&#160;&#160;居&#160;&#160;&#160;&#160;</string>
+    <string name="activity_details_diagnosis">诊断头皮&#160;&#160;&#160;&#160;</string>
+    <string name="activity_details_product2">产&#160;&#160;品&#160;&#160;&#160;&#160;</string>
     <string name="activity_details_type">类&#160;&#160;型&#160;&#160;&#160;&#160;</string>
     <string name="activity_details_satisfaction">满&#160;意&#160;度&#160;&#160;&#160;&#160;</string>
     <string name="activity_details_analyze">进入分析</string>
@@ -71,7 +76,7 @@
 
     <!--公司简介-->
     <string name="activity_company_profile">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;山东至信信息科技有限公司是一家集软件研发、系统集成、互联网服务为一体的综合性高新技术企业，公司注册资金500万元，现有专业技术人员56人。\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;设有日照国际海洋城和岚山区两个分公司，一个智慧城市研发中心，公司业务涵盖省内外300多家政府机关及企事业单位，主营业务涉及智慧政务、智慧民生、智慧教育、智慧社区、智慧旅游和智慧应急调度等领域。公司积极响应国家信息化战略和产业发展要求，以“城市让生活更美好”为目标，以“推进智慧城市建设”为己任，为推进智慧城市发展提供全面的技术解决方案。</string>
-    
+
     <!-- 签名 -->
     <string name="dialog_confirm">确定</string>
     <string name="dialog_cancel">取消</string>

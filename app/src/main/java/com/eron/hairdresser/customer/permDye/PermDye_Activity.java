@@ -13,17 +13,16 @@ import com.eron.hairdresser.customer.newUser.NewRecord_Activity;
 import com.eron.hairdresser.model.Customer_Model;
 import com.eron.hairdresser.views.headTitle.HeadTitle;
 import com.lin.framwork.utils.IntentUtil;
-import com.lin.framwork.views.Toast_Control.Toast_Common;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import butterknife.OnItemClick;
 
 public class PermDye_Activity extends AppCompatActivity {
+    public final static String Tag = "PermDye_Activity";
 
     @Bind(R.id.activity_perm_dye_HeadTitle)
     HeadTitle activityPermDyeHeadTitle;
@@ -63,7 +62,7 @@ public class PermDye_Activity extends AppCompatActivity {
         activityPermDyeHeadTitle.setRightOnclick(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IntentUtil.goToContext(PermDye_Activity.this, NewRecord_Activity.class, IntentTag.newRecordTag,IntentTag.getNewRecordBase(1));
+                IntentUtil.goToContext(PermDye_Activity.this, NewRecord_Activity.class, IntentTag.newRecordTag, IntentTag.getNewRecordBase(1));
             }
         });
         activityPermDyeListView.setAdapter(listView_adapter);
@@ -71,6 +70,6 @@ public class PermDye_Activity extends AppCompatActivity {
 
     @OnItemClick(R.id.activity_perm_dye_ListView)
     public void onItemClick(int position) {
-        IntentUtil.goToContext(this, Details_Activity.class);
+        IntentUtil.goToContext(this, Details_Activity.class, IntentTag.DetailsTag, Tag);
     }
 }

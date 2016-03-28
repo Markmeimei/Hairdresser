@@ -14,7 +14,9 @@ public class Customer_Model {
     private String birthday;    //生日
     private String quality; //品质
     private String hairLength;  //发长
-    private List<PersonalRecord_Model> list;    //详细资料列表详情
+    private String phone;   //电话
+    private List<PermDye_Model> permDye_models;    //详细资料列表详情
+    private List<Nutrition_Model> nutrition_models; //  美容记录详细列表
 
     public String getName() {
         return name;
@@ -72,11 +74,27 @@ public class Customer_Model {
         this.hairLength = hairLength;
     }
 
-    public List<PersonalRecord_Model> getList() {
-        return list;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setList(List<PersonalRecord_Model> list) {
-        this.list = list;
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public List<PermDye_Model> getPermDye_models() {
+        return permDye_models;
+    }
+
+    public void setPermDye_models(List<PermDye_Model> permDye_models) {
+        this.permDye_models = permDye_models;
+    }
+
+    public List<Nutrition_Model> getNutrition_models() {
+        return nutrition_models;
+    }
+
+    public void setNutrition_models(List<Nutrition_Model> nutrition_models) {
+        this.nutrition_models = nutrition_models;
     }
 }

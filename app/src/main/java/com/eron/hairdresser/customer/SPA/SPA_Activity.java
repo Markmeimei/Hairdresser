@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.eron.hairdresser.R;
-import com.eron.hairdresser.adapter.PermDye_Activity_ListView_Adapter;
 import com.eron.hairdresser.adapter.SPA_Activity_ListView_Adapter;
 import com.eron.hairdresser.common.IntentTag;
 import com.eron.hairdresser.customer.Details_Activity;
@@ -14,7 +13,6 @@ import com.eron.hairdresser.customer.newUser.NewRecord_Activity;
 import com.eron.hairdresser.model.Customer_Model;
 import com.eron.hairdresser.views.headTitle.HeadTitle;
 import com.lin.framwork.utils.IntentUtil;
-import com.lin.framwork.views.Toast_Control.Toast_Common;
 
 import java.util.ArrayList;
 import java.util.List;

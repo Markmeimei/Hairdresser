@@ -117,6 +117,7 @@ public class AddForm_Activity extends AppCompatActivity {
 
     private AddForm_Activity_ListView_Adapter listView_adapter;
     private List<AddForm_Model> modelList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,6 +126,7 @@ public class AddForm_Activity extends AppCompatActivity {
         initConstants();
         Init();
     }
+
     private void Init() {
         modelList = new ArrayList<>();
         AddForm_Model model = new AddForm_Model();
@@ -140,9 +142,32 @@ public class AddForm_Activity extends AppCompatActivity {
         listView_adapter = new AddForm_Activity_ListView_Adapter(this, modelList);
         Content();
     }
+
     private void Content() {
         activityAddFormListViewForScrollView.setAdapter(listView_adapter);
+        activityAddFormRadioGroup01Up.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (group.getCheckedRadioButtonId() == activityAddFormRadioButton13Up.getId()) {
+                    activityAddFormLinearLayoutForEditText01.setVisibility(View.VISIBLE);
+                } else {
+                    activityAddFormLinearLayoutForEditText01.setVisibility(View.GONE);
+                }
+            }
+        });
+        activityAddFormRadioGroup02Up.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (group.getCheckedRadioButtonId() == activityAddFormRadioButton23Up.getId()) {
+                    activityAddFormLinearLayoutForEditText02.setVisibility(View.VISIBLE);
+                } else {
+                    activityAddFormLinearLayoutForEditText02.setVisibility(View.GONE);
+                }
+            }
+        });
+
     }
+
     private void initConstants() {
         context = this;
     }
@@ -153,7 +178,7 @@ public class AddForm_Activity extends AppCompatActivity {
             R.id.activity_add_form_RadioButton23_Up, R.id.activity_add_form_RadioGroup02_Up, R.id.activity_add_form_EditText02,
             R.id.activity_add_form_LinearLayout_For_EditText02, R.id.activity_add_form_Stylist, R.id.activity_add_form_Type01,
             R.id.activity_add_form_Hairdressing, R.id.activity_add_form_Type02, R.id.activity_add_form_PermDye, R.id.activity_add_form_Type03,
-            R.id.activity_add_form_Cashier, R.id.activity_add_form_Manager, R.id.activity_add_form_Submit, R.id.activity_add_form_TextView01,R.id.add_customer_sign})
+            R.id.activity_add_form_Cashier, R.id.activity_add_form_Manager, R.id.activity_add_form_Submit, R.id.activity_add_form_TextView01, R.id.add_customer_sign})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.activity_add_form_Smallicon01:
@@ -238,7 +263,7 @@ public class AddForm_Activity extends AppCompatActivity {
     public void showSign() {
         File file = new File(path + "customer_sign.jpg");
         if (file.exists()) {
-            Log.e("显示照片",path);
+            Log.e("显示照片", path);
             activityAddFormImageView.setImageBitmap(BitmapFactory.decodeFile(path + "customer_sign.jpg"));
         }
     }

@@ -7,14 +7,12 @@ import android.widget.ListView;
 
 import com.eron.hairdresser.R;
 import com.eron.hairdresser.adapter.Nutrition_Activity_ListView_Adapter;
-import com.eron.hairdresser.adapter.PermDye_Activity_ListView_Adapter;
 import com.eron.hairdresser.common.IntentTag;
 import com.eron.hairdresser.customer.Details_Activity;
 import com.eron.hairdresser.customer.newUser.NewRecord_Activity;
 import com.eron.hairdresser.model.Customer_Model;
 import com.eron.hairdresser.views.headTitle.HeadTitle;
 import com.lin.framwork.utils.IntentUtil;
-import com.lin.framwork.views.Toast_Control.Toast_Common;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +22,7 @@ import butterknife.ButterKnife;
 import butterknife.OnItemClick;
 
 public class Nutrition_Activity extends AppCompatActivity {
+    public final static String Tag = "Nutrition_Activity";
 
     @Bind(R.id.activity_nutrition_HeadTitle)
     HeadTitle activityNutritionHeadTitle;
@@ -71,6 +70,6 @@ public class Nutrition_Activity extends AppCompatActivity {
 
     @OnItemClick(R.id.activity_nutrition_ListView)
     public void onItemClick(int position) {
-        IntentUtil.goToContext(this, Details_Activity.class);
+        IntentUtil.goToContext(this, Details_Activity.class, IntentTag.DetailsTag, Tag);
     }
 }

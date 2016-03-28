@@ -4,7 +4,7 @@ package com.eron.hairdresser.model;
  * Created by 林炜智 on 2016/3/15.
  * 详细资料列表详情
  */
-public class PersonalRecord_Model {
+public class PermDye_Model {
     private String date;    //时间
     private String project; //项目
     private String hairstylistName; //发型师姓名
@@ -14,6 +14,7 @@ public class PersonalRecord_Model {
     private String afterUseImg; //使用后图片
     private String satisfaction;    //满意度
     private Boolean show;   //（个人使用）折叠显示
+
 
     public String getDate() {
         return date;

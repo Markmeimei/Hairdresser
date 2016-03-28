@@ -54,6 +54,7 @@ public class Views {
             TextView viewsDetailsFirstBirthday = ButterKnife.findById(view, R.id.views_details_first_Birthday);
             TextView viewsDetailsFirstQuality = ButterKnife.findById(view, R.id.views_details_first_Quality);
             TextView viewsDetailsFirstHairLength = ButterKnife.findById(view, R.id.views_details_first_HairLength);
+            TextView viewsDetailsFirstPhone = ButterKnife.findById(view, R.id.views_details_first_Phone);
 
             String Name = context.getResources().getString(R.string.activity_details_guest) + list.get(0).getName();
             String CardNumber = context.getResources().getString(R.string.activity_details_cardnumber) + list.get(0).getCardNumber();
@@ -66,6 +67,7 @@ public class Views {
             String Birthday = context.getResources().getString(R.string.activity_details_birthday) + list.get(0).getBirthday();
             String Quality = context.getResources().getString(R.string.activity_details_quality) + list.get(0).getQuality();
             String HairLength = context.getResources().getString(R.string.activity_details_hairlength) + list.get(0).getHairLength();
+            String Phone = context.getResources().getString(R.string.activity_details_phone) + list.get(0).getPhone();
 
             viewsDetailsFirstName.setText(SpannableStringUtil.getForegroundColor(Name, context.getResources().getColor(R.color.text_color1), 4, Name.length()));
             viewsDetailsFirstCardNumber.setText(SpannableStringUtil.getForegroundColor(CardNumber, context.getResources().getColor(R.color.text_color1), 4, CardNumber.length()));
@@ -74,6 +76,7 @@ public class Views {
             viewsDetailsFirstBirthday.setText(SpannableStringUtil.getForegroundColor(Birthday, context.getResources().getColor(R.color.text_color1), 4, Birthday.length()));
             viewsDetailsFirstQuality.setText(SpannableStringUtil.getForegroundColor(Quality, context.getResources().getColor(R.color.text_color1), 4, Quality.length()));
             viewsDetailsFirstHairLength.setText(SpannableStringUtil.getForegroundColor(HairLength, context.getResources().getColor(R.color.text_color1), 4, HairLength.length()));
+            viewsDetailsFirstPhone.setText(SpannableStringUtil.getForegroundColor(HairLength, context.getResources().getColor(R.color.text_color1), 4, HairLength.length()));
             return view;
         }
     }

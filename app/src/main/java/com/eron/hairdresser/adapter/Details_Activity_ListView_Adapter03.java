@@ -22,12 +22,12 @@ import butterknife.ButterKnife;
 /**
  * Created by 林炜智 on 2016/3/15.
  */
-public class Details_Activity_ListView_Adapter extends BaseAdapter {
+public class Details_Activity_ListView_Adapter03 extends BaseAdapter {
     private LayoutInflater inflater;
     private Context context;
     private List<PermDye_Model> modelList;
 
-    public Details_Activity_ListView_Adapter(Context context, List<PermDye_Model> list) {
+    public Details_Activity_ListView_Adapter03(Context context, List<PermDye_Model> list) {
         this.inflater = LayoutInflater.from(context);
         this.context = context;
         this.modelList = list;
