@@ -76,6 +76,8 @@ public class Hairdresser_Fragment extends Fragment {
         Toast_Common.CenterToast(getActivity(), position + "");
         if(position == 1){
             startActivity(new Intent(getActivity(),Check_Performance.class));
+        }else if(position == 3){
+            startActivity(new Intent(getActivity(),Analysis_Fragment.class));
         }
     }
 
