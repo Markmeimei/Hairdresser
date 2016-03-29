@@ -13,7 +13,6 @@ import com.eron.hairdresser.adapter.Read_Fragment_GridView_Adapter_Down;
 import com.eron.hairdresser.adapter.Read_Fragment_GridView_Adapter_Up;
 import com.eron.hairdresser.read.companyProfile.CompanyProfile_Activity;
 import com.eron.hairdresser.read.hairStyleImg.HairStyleImg_Activity;
-import com.eron.hairdresser.read.product.Product_Activity;
 import com.lin.framwork.utils.IntentUtil;
 import com.lin.framwork.views.Toast_Control.Toast_Common;
 
