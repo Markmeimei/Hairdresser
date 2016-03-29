@@ -15,6 +15,7 @@ import com.eron.hairdresser.R;
 import com.eron.hairdresser.TabHost_Activity;
 import com.eron.hairdresser.adapter.HairStyleImg_Activity_RecyclerView_Adapter;
 import com.eron.hairdresser.model.HairStyleImg_Model;
+import com.eron.hairdresser.register.Login_Activity;
 import com.eron.hairdresser.views.headTitle.HeadTitle;
 import com.lin.framwork.utils.IntentUtil;
 import com.lin.framwork.utils.RecycleViewDividerUtil;
@@ -80,12 +81,12 @@ public class HairStyleImg_Activity extends AppCompatActivity implements SwipeRef
         recyclerView_adapter.setOnItemClickLitener(new HairStyleImg_Activity_RecyclerView_Adapter.OnItemClickLitener() {
             @Override
             public void onItemClick(View view, int position) {
-                Toast_Common.DefaultToast(HairStyleImg_Activity.this, "" + position);
+                IntentUtil.goToContext(HairStyleImg_Activity.this, Login_Activity.class);
             }
 
             @Override
             public void onItemLongClick(View view, int position) {
-                Toast_Common.DefaultToast(HairStyleImg_Activity.this, "长按" + position);
+                IntentUtil.goToContext(HairStyleImg_Activity.this, Login_Activity.class);
             }
         });
         Content();

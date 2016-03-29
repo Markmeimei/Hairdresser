@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.eron.hairdresser.R;
 import com.eron.hairdresser.adapter.PermDye_Activity_ListView_Adapter;
@@ -13,12 +14,14 @@ import com.eron.hairdresser.customer.newUser.NewRecord_Activity;
 import com.eron.hairdresser.model.Customer_Model;
 import com.eron.hairdresser.views.headTitle.HeadTitle;
 import com.lin.framwork.utils.IntentUtil;
+import com.lin.framwork.views.PopupWindow_Control.PopupWindowListView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.OnItemClick;
 
 public class PermDye_Activity extends AppCompatActivity {
@@ -28,6 +31,8 @@ public class PermDye_Activity extends AppCompatActivity {
     HeadTitle activityPermDyeHeadTitle;
     @Bind(R.id.activity_perm_dye_ListView)
     ListView activityPermDyeListView;
+    @Bind(R.id.activity_perm_dye_Filtrate)
+    TextView activityPermDyeFiltrate;
 
     private PermDye_Activity_ListView_Adapter listView_adapter;
 
@@ -62,7 +67,7 @@ public class PermDye_Activity extends AppCompatActivity {
         activityPermDyeHeadTitle.setRightOnclick(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IntentUtil.goToContext(PermDye_Activity.this, NewRecord_Activity.class, IntentTag.newRecordTag, IntentTag.getNewRecordBase(1));
+                IntentUtil.goToContext(PermDye_Activity.this, NewRecord_Activity.class, IntentTag.newRecordTag, Tag);
             }
         });
         activityPermDyeListView.setAdapter(listView_adapter);
@@ -71,5 +76,25 @@ public class PermDye_Activity extends AppCompatActivity {
     @OnItemClick(R.id.activity_perm_dye_ListView)
     public void onItemClick(int position) {
         IntentUtil.goToContext(this, Details_Activity.class, IntentTag.DetailsTag, Tag);
+    }
+
+    @OnClick(R.id.activity_perm_dye_Filtrate)
+    public void onClick() {
+        List<String> strings = new ArrayList<>();
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        strings.add("1");
+        PopupWindowListView windowListView = new PopupWindowListView(this, strings);
+        windowListView.showPopupWindow(activityPermDyeFiltrate);
     }
 }

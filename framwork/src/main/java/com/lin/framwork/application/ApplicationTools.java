@@ -3,15 +3,16 @@ package com.lin.framwork.application;
 import android.content.Context;
 
 import com.android.volley.RequestQueue;
+import com.lin.framwork.model.User_Model;
 
 /**
  * Created by 林炜智 on 2015/9/23.
  */
-public class ApplicarionTools {
+public class ApplicationTools {
     //  Volley网络请求
     public static RequestQueue requestQueue;
-    //  全局用户ID
-    public static String userId;
+    //  全局用户信息
+    public static User_Model user;
 
     public static RequestQueue getHttpRequestQueue(Context context) {
         if (context == null)
@@ -21,12 +22,12 @@ public class ApplicarionTools {
         return requestQueue;
     }
 
-    public static String getUserId() {
-        return userId;
+    public static User_Model getUser() {
+        return user;
     }
 
-    public static void setUserId(String userId) {
-        ApplicarionTools.userId = userId;
+    public static void setUser(User_Model user) {
+        ApplicationTools.user = user;
     }
 
 }

@@ -8,12 +8,15 @@ import android.widget.ListView;
 import com.eron.hairdresser.R;
 import com.eron.hairdresser.adapter.Details_Activity_ListView_Adapter;
 import com.eron.hairdresser.adapter.Details_Activity_ListView_Adapter02;
+import com.eron.hairdresser.adapter.Details_Activity_ListView_Adapter03;
 import com.eron.hairdresser.common.IntentTag;
+import com.eron.hairdresser.customer.SPA.SPA_Activity;
 import com.eron.hairdresser.customer.nutrition.Nutrition_Activity;
 import com.eron.hairdresser.customer.permDye.PermDye_Activity;
 import com.eron.hairdresser.model.Customer_Model;
 import com.eron.hairdresser.model.Nutrition_Model;
 import com.eron.hairdresser.model.PermDye_Model;
+import com.eron.hairdresser.model.SPA_Model;
 import com.eron.hairdresser.views.Views;
 import com.eron.hairdresser.views.headTitle.HeadTitle;
 
@@ -73,8 +76,7 @@ public class Details_Activity extends AppCompatActivity {
             Details_Activity_ListView_Adapter listView_adapter = new Details_Activity_ListView_Adapter(this, modelList.get(0).getPermDye_models());
             fragmentCustomerListView.addHeaderView(Views.getDetailsFirst(this, modelList));
             fragmentCustomerListView.setAdapter(listView_adapter);
-        }
-        if (intent.getStringExtra(IntentTag.DetailsTag).equals(Nutrition_Activity.Tag)) {
+        } else if (intent.getStringExtra(IntentTag.DetailsTag).equals(Nutrition_Activity.Tag)) {
             List<Nutrition_Model> list = new ArrayList<>();
             for (int i = 0; i < 10; i++) {
                 Nutrition_Model model1 = new Nutrition_Model();
@@ -93,6 +95,25 @@ public class Details_Activity extends AppCompatActivity {
             Details_Activity_ListView_Adapter02 listView_adapter02 = new Details_Activity_ListView_Adapter02(this, modelList.get(0).getNutrition_models());
             fragmentCustomerListView.addHeaderView(Views.getDetailsFirst(this, modelList));
             fragmentCustomerListView.setAdapter(listView_adapter02);
+        } else if (intent.getStringExtra(IntentTag.DetailsTag).equals(SPA_Activity.Tag)) {
+            List<SPA_Model> list = new ArrayList<>();
+            for (int i = 0; i < 10; i++) {
+                SPA_Model model1 = new SPA_Model();
+                model1.setDate("2016.3.16");
+                model1.setProject("头皮SPA");
+                model1.setMask("欧莱雅ss");
+                model1.setAssistant("小李");
+                model1.setAppointmentTime("时间");
+                model1.setAppointmentPerson("林炜智");
+                model1.setSignature("图片");
+                model1.setShow(false);
+                list.add(model1);
+            }
+            model.setSpa_models(list);
+            modelList.add(model);
+            Details_Activity_ListView_Adapter03 listView_adapter03 = new Details_Activity_ListView_Adapter03(this, modelList.get(0).getSpa_models());
+            fragmentCustomerListView.addHeaderView(Views.getDetailsFirst(this, modelList));
+            fragmentCustomerListView.setAdapter(listView_adapter03);
         }
         Content();
     }

@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/adapter_details_activity_listview_LinearLayout_Up"
+        android:id="@+id/adapter_details_activity_listview03_LinearLayout_Up"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -14,7 +14,7 @@
         android:paddingLeft="@dimen/dimen_20">
 
         <TextView
-            android:id="@+id/adapter_details_activity_listview_Date"
+            android:id="@+id/adapter_details_activity_listview03_Date"
             android:layout_width="@dimen/dimen_0"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -33,7 +33,7 @@
             android:paddingLeft="@dimen/dimen_10">
 
             <TextView
-                android:id="@+id/adapter_details_activity_listview_Project"
+                android:id="@+id/adapter_details_activity_listview03_Project"
                 android:layout_width="@dimen/dimen_0"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -42,7 +42,7 @@
                 android:textSize="16sp" />
 
             <ImageView
-                android:id="@+id/adapter_details_activity_listview_Img"
+                android:id="@+id/adapter_details_activity_listview03_Img"
                 android:layout_width="@dimen/dimen_15"
                 android:layout_height="@dimen/dimen_15"
                 android:layout_marginRight="@dimen/dimen_10"
@@ -51,7 +51,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/adapter_details_activity_listview_LinearLayout_Down"
+        android:id="@+id/adapter_details_activity_listview03_LinearLayout_Down"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -70,12 +70,12 @@
                 android:background="@color/line_color" />
 
             <TextView
-                android:id="@+id/adapter_details_activity_listview_HairstylistName"
+                android:id="@+id/adapter_details_activity_listview03_Mask"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="@dimen/dimen_10"
                 android:paddingTop="@dimen/dimen_10"
-                android:text="发型师  王尼玛"
+                android:text="发膜                王尼玛"
                 android:textColor="@color/text_color"
                 android:textSize="16sp" />
 
@@ -84,103 +84,68 @@
                 android:layout_height="@dimen/dimen_0.5"
                 android:background="@color/line_color" />
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/adapter_details_activity_listview03_Assistant"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:paddingBottom="@dimen/dimen_10"
+                android:paddingTop="@dimen/dimen_10"
+                android:text="助理                欧莱雅"
+                android:textColor="@color/text_color"
+                android:textSize="16sp" />
 
-                <TextView
-                    android:id="@+id/adapter_details_activity_listview_Product"
-                    android:layout_width="@dimen/dimen_0"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingBottom="@dimen/dimen_10"
-                    android:paddingTop="@dimen/dimen_10"
-                    android:text="烫发产品  欧莱雅"
-                    android:textColor="@color/text_color"
-                    android:textSize="16sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_0.5"
+                android:background="@color/line_color" />
 
-                <TextView
-                    android:id="@+id/adapter_details_activity_listview_Type"
-                    android:layout_width="@dimen/dimen_0"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingBottom="@dimen/dimen_10"
-                    android:paddingLeft="@dimen/dimen_10"
-                    android:paddingTop="@dimen/dimen_10"
-                    android:text="类型       热"
-                    android:textColor="@color/text_color"
-                    android:textSize="16sp" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_10"
-            android:background="@color/white"
-            android:paddingBottom="@dimen/dimen_10"
-            android:paddingLeft="@dimen/dimen_20"
-            android:paddingTop="@dimen/dimen_10"
-            android:text="效果对比"
-            android:textColor="@color/text_color"
-            android:textSize="16sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_10"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="@dimen/dimen_0"
+            <TextView
+                android:id="@+id/adapter_details_activity_listview03_AppointmentTime"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@mipmap/icon_perm_before" />
+                android:paddingBottom="@dimen/dimen_10"
+                android:paddingTop="@dimen/dimen_10"
+                android:text="下次预约时间      欧莱雅"
+                android:textColor="@color/text_color"
+                android:textSize="16sp" />
 
-            <ImageView
-                android:layout_width="@dimen/dimen_0"
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_0.5"
+                android:background="@color/line_color" />
+
+            <TextView
+                android:id="@+id/adapter_details_activity_listview03_AppointmentPerson"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@mipmap/icon_perm_after" />
+                android:paddingBottom="@dimen/dimen_10"
+                android:paddingTop="@dimen/dimen_10"
+                android:text="预约人            欧莱雅"
+                android:textColor="@color/text_color"
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_10"
-            android:orientation="horizontal">
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dimen_10"
+                android:paddingLeft="@dimen/dimen_20"
+                android:paddingTop="@dimen/dimen_10"
+                android:text="顾客签名"
+                android:background="@color/white"
+                android:textColor="@color/text_color1"
+                android:textSize="16sp" />
 
             <ImageView
-                android:id="@+id/adapter_details_activity_listview_UseBeforeImg"
-                android:layout_width="@dimen/dimen_0"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingLeft="@dimen/dimen_20"
-                android:paddingRight="@dimen/dimen_20"
-                android:src="@mipmap/icon_perm_detail_pic" />
-
-            <ImageView
-                android:id="@+id/adapter_details_activity_listview_AfterUseImg"
-                android:layout_width="@dimen/dimen_0"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingLeft="@dimen/dimen_20"
-                android:paddingRight="@dimen/dimen_20"
-                android:src="@mipmap/icon_perm_detail_pic" />
+                android:id="@+id/adapter_details_activity_listview03_Signature"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_100" />
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/adapter_details_activity_listview_Satisfaction"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_10"
-            android:background="@color/white"
-            android:paddingBottom="@dimen/dimen_10"
-            android:paddingLeft="@dimen/dimen_20"
-            android:paddingTop="@dimen/dimen_10"
-            android:text="满意度    优"
-            android:textColor="@color/text_color"
-            android:textSize="16sp" />
     </LinearLayout>
 </LinearLayout>

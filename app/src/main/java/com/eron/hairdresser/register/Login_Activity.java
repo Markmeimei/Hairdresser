@@ -11,11 +11,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.volley.VolleyError;
 import com.eron.hairdresser.R;
+import com.lin.framwork.application.ApplicationTools;
 import com.lin.framwork.config.ConfigUrl;
 import com.eron.hairdresser.TabHost_Activity;
-import com.eron.hairdresser.model.LoginResult_Model;
-import com.lin.framwork.application.ApplicarionTools;
+import com.lin.framwork.model.User_Model;
 import com.lin.framwork.utils.IntentUtil;
 import com.lin.framwork.utils.SharedPreferencesUtil;
 import com.lin.framwork.utils.VolleyUtil;
@@ -84,9 +85,7 @@ public class Login_Activity extends AppCompatActivity {
                 if (activityLoginAccount.getText().toString().equals("") && activityLoginPassword.getText().toString().equals(""))
                     Toast_Common.DefaultToast(this, "请输入账号或密码！");
                 else
-//                    LoginIn();
-                    IntentUtil.goToContext(Login_Activity.this, TabHost_Activity.class);
-                    Login_Activity.this.finish();
+                    LoginIn();
                 break;
             case R.id.activity_login_Forget:
                 Toast_Common.CenterToast(this, "忘记密码");
@@ -95,16 +94,14 @@ public class Login_Activity extends AppCompatActivity {
     }
 
     private void LoginIn() {
-        String Url = ConfigUrl.Login_Activity;
-        VolleyUtil util = new VolleyUtil();
         Map<String, String> map = new HashMap<String, String>();
         map.put("nick", activityLoginAccount.getText().toString());
         map.put("pwd", activityLoginPassword.getText().toString());
-        util.post(Url, LoginResult_Model.class, Tag, map, new VolleyUtil.PostCallback() {
+        new VolleyUtil().post(ConfigUrl.Login_ActivityUrl, User_Model.class, Tag, map, new VolleyUtil.PostCallback() {
             @Override
             public void onSuccess(String result, List list) {
-                List<LoginResult_Model> modelList = list;
-                if (modelList.get(0).getError().equals("0")) {
+                List<User_Model> modelList = list;
+                if (modelList.get(0).getCode().equals("1")) {
                     if (activityLoginRemember.isChecked()) {
                         SharedPreferencesUtil.put(Login_Activity.this, "userName", activityLoginAccount.getText().toString());
                         SharedPreferencesUtil.put(Login_Activity.this, "passWord", activityLoginPassword.getText().toString());
@@ -114,7 +111,7 @@ public class Login_Activity extends AppCompatActivity {
                         SharedPreferencesUtil.remove(Login_Activity.this, "passWord");
                         SharedPreferencesUtil.remove(Login_Activity.this, "rememberPassWord");
                     }
-                    ApplicarionTools.setUserId(modelList.get(0).getUid());
+                    ApplicationTools.setUser(modelList.get(0));
                     Toast_Common.DefaultToast(Login_Activity.this, "登陆成功！");
                     IntentUtil.goToContext(Login_Activity.this, TabHost_Activity.class);
                     Login_Activity.this.finish();
@@ -124,8 +121,9 @@ public class Login_Activity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(String error) {
-                Log.e(Tag, error);
+            public void onFailure(VolleyError error) {
+                Toast_Common.DefaultToast(Login_Activity.this, "网络请求失败，请检查网络");
+                Log.e(Tag, error.getMessage());
             }
         });
     }

@@ -37,7 +37,6 @@
                 android:layout_width="@dimen/dimen_0"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="项 目          烫发"
                 android:textColor="@color/text_color"
                 android:textSize="16sp" />
 

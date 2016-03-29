@@ -39,14 +39,6 @@
         <activity android:name=".home.expire.Expire_Activity" />
         <activity android:name=".customer.newUser.NewRecord_Activity" />
         <activity android:name=".addform.AddForm_Activity"></activity>
-        <!-- 业绩查询 -->
-        <activity android:name=".hairdresser.Check_Performance"/>
-        <!-- 更改密码 -->
-        <activity android:name=".hairdresser.setting.ModifyPWDActivity"/>
-        <!-- 建议反馈 -->
-        <activity android:name=".hairdresser.setting.FeedbackActivity" />
-        <!-- 关于 -->
-        <activity android:name=".hairdresser.setting.AboutActivity"/>
     </application>
 
 </manifest>
