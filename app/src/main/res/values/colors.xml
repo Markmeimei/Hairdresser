@@ -20,6 +20,7 @@
     <color name="text_color">#777777</color>
     <color name="text_color1">#323232</color>
     <color name="text_color2">#5FA8EC</color>
+    <color name="text_color3">#b3b3b3</color>
     <!--全部按钮颜色-->
     <color name="button_color">#FF9536</color>
 
@@ -45,5 +46,13 @@
     <color name="blue">#0000FF</color><!--蓝色 -->
     <color name="black">#000000</color><!--黑色 -->
     <color name="dialog_btn_pressed">#0397fc</color>
-
+    <color name="percent_text_color">#3CB371</color>
+    <color name="percent_text_color_2">#A2CD5A</color>
+    <color name="progressbar_bg_color_default">#636363</color>
+    <color name="progress_color_default">#00C5CD</color>
+    <color name="progressbar_bg_color_1">#737373</color>
+    <color name="progress_color_1">#3CB371</color>
+    <color name="achievement_background">#EDEDED</color>
+    <color name="text_content">#ffa19d94</color>
+    <color name="color_background">#EDEDED</color>
 </resources>

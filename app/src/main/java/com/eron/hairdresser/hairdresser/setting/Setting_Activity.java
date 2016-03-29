@@ -1,16 +1,14 @@
 package com.eron.hairdresser.hairdresser.setting;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.eron.hairdresser.R;
 import com.eron.hairdresser.adapter.Setting_Activity_ListView_Adapter;
-import com.eron.hairdresser.views.Views;
-import com.lin.framwork.views.Toast_Control.Toast_Common;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,13 +26,18 @@ public class Setting_Activity extends AppCompatActivity {
     Button activitySettingExit;
 
     private Setting_Activity_ListView_Adapter listView_adapter;
-
+    private Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
         ButterKnife.bind(this);
+        initConstants();
         Init();
+    }
+
+    private void initConstants() {
+        context = Setting_Activity.this;
     }
 
     private void Init() {
@@ -60,12 +63,16 @@ public class Setting_Activity extends AppCompatActivity {
     public void onItemClick(int position) {
         switch (position){
             case 0:
+                startActivity(new Intent(context,ModifyPWDActivity.class));
                 break;
             case 1:
+//                startActivity(new Intent(context,));
                 break;
             case 2:
+                startActivity(new Intent(context,FeedbackActivity.class));
                 break;
             case 3:
+                startActivity(new Intent(context,AboutActivity.class));
                 break;
         }
     }

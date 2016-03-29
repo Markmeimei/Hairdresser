@@ -4,7 +4,8 @@
     android:background="@color/background"
     android:orientation="vertical">
 
-    <com.eron.hairdresser.views.headTitle.HeadTitle xmlns:title="http://schemas.android.com/apk/res-auto"
+    <com.eron.hairdresser.views.headTitle.HeadTitle
+        xmlns:title="http://schemas.android.com/apk/res-auto"
         android:id="@+id/fragment_home_HeadTitle"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_50"

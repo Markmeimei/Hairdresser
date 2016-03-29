@@ -55,6 +55,7 @@ public class Login_Activity extends AppCompatActivity {
         Init();
     }
 
+
     private void Init() {
         boolean remember = (boolean) SharedPreferencesUtil.get(this, "rememberPassWord", false);
         if (remember) {
