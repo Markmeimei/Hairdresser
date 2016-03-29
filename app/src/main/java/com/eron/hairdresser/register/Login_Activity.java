@@ -3,7 +3,6 @@ package com.eron.hairdresser.register;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,9 +12,9 @@ import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.eron.hairdresser.R;
+import com.eron.hairdresser.TabHost_Activity;
 import com.lin.framwork.application.ApplicationTools;
 import com.lin.framwork.config.ConfigUrl;
-import com.eron.hairdresser.TabHost_Activity;
 import com.lin.framwork.model.User_Model;
 import com.lin.framwork.utils.IntentUtil;
 import com.lin.framwork.utils.SharedPreferencesUtil;
@@ -123,7 +122,6 @@ public class Login_Activity extends AppCompatActivity {
             @Override
             public void onFailure(VolleyError error) {
                 Toast_Common.DefaultToast(Login_Activity.this, "网络请求失败，请检查网络");
-                Log.e(Tag, error.getMessage());
             }
         });
     }
