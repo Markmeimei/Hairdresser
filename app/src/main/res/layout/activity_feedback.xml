@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <com.eron.hairdresser.views.headTitle.HeadTitle
+        xmlns:title="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/activity_new_user_HeadTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50"
+        title:imgLeft="@mipmap/head_title_return"
+        title:titleCenter="@string/setting_feedback_title"
+        title:titleLeft="@string/head_title_return" />
+    <EditText
+        android:id="@+id/feedback_input"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="@dimen/dimen_10"
+        android:background="@null"
+        android:hint="@string/setting_feedback_opinion"
+        android:gravity="start"/>
+</LinearLayout>

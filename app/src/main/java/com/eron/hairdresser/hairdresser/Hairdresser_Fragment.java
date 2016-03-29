@@ -1,5 +1,6 @@
 package com.eron.hairdresser.hairdresser;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -23,7 +24,7 @@ import butterknife.ButterKnife;
 import butterknife.OnItemClick;
 
 /**
- *
+ * 发型师
  */
 public class Hairdresser_Fragment extends Fragment {
 
@@ -73,6 +74,9 @@ public class Hairdresser_Fragment extends Fragment {
     @OnItemClick(R.id.fragment_hairdresser_ListView)
     public void onItemClick(int position) {
         Toast_Common.CenterToast(getActivity(), position + "");
+        if(position == 1){
+            startActivity(new Intent(getActivity(),Check_Performance.class));
+        }
     }
 
     @Override

@@ -86,4 +86,23 @@
     <!-- 签名 -->
     <string name="dialog_confirm">确定</string>
     <string name="dialog_cancel">取消</string>
+
+    <!--业绩查询-->
+    <string name="check_achievement_title">业绩查询</string>
+    <string name="check_achievement_week">按周</string>
+    <string name="check_achievement_perm">烫发</string>
+    <string name="check_achievement_color">染发</string>
+    <string name="check_achievement_nursing">护理</string>
+    <string name="check_achievement_finish">已完成</string>
+    <string name="check_achievement_quantity">%</string>
+    <!-- 关于 -->
+    <string name="setting_about_title">关于</string>
+    <string name="setting_about_company">XXX有限公司</string>
+    <string name="setting_about_website"><a href = "http://www.baidu.com/"> http://www.baidu.com/ </a></string>
+    <!-- 建议反馈 -->
+    <string name="setting_feedback_title">建议与反馈</string>
+    <string name="setting_feedback_opinion">请填写您的意见或者建议</string>
+    <string name="loading_press">请稍候，正在提交...</string>
+    <!-- 修改密码 -->
+    <string name="setting_pwd">更改密码</string>
 </resources>

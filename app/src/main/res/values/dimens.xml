@@ -17,6 +17,7 @@
     <dimen name="dimen_10">10dp</dimen>
     <dimen name="dimen_12">12dp</dimen>
     <dimen name="dimen_15">15dp</dimen>
+    <dimen name="dimen_18">18dp</dimen>
     <dimen name="dimen_20">20dp</dimen>
     <dimen name="dimen_22">22dp</dimen>
     <dimen name="dimen_25">25dp</dimen>
@@ -43,8 +44,18 @@
     <dimen name="dimen_450">450dp</dimen>
     <dimen name="dimen_500">500dp</dimen>
     <dimen name="dimen_580">580dp</dimen>
+    <dimen name="percent_text_size_default">8sp</dimen>
+    <dimen name="percent_text_size_small">4sp</dimen>
+    <dimen name="percent_text_size_large">12sp</dimen>
+    <dimen name="percent_text_size">22sp</dimen>
+    <dimen name="horizontal_corner">10dp</dimen>
     <!-- sp -->
+    <dimen name="dimen_16sp">16sp</dimen>
+    <dimen name="dimen_18sp">18sp</dimen>
+    <dimen name="dimen_20sp">20sp</dimen>
+    <dimen name="dimen_22sp">22sp</dimen>
     <dimen name="dimen_25sp">25sp</dimen>
+
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
