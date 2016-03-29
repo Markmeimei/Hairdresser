@@ -29,4 +29,7 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'    //butterknife  注解     网址：https://github.com/JakeWharton/butterknife
     compile 'com.mcxiaoke.volley:library:1.0.19'    //  Volley  网络请求   网址：https://github.com/mcxiaoke/android-volley    介绍网址：http://blog.csdn.net/ysh06201418/article/details/46443235
     compile 'com.google.code.gson:gson:2.6.2'   //  Gson    数据解析        网址：https://github.com/google/gson   介绍网址：http://www.open-open.com/lib/view/open1451223702339.html
+
+
+
 }

@@ -123,7 +123,6 @@ public class Login_Activity extends AppCompatActivity {
             @Override
             public void onFailure(VolleyError error) {
                 Toast_Common.DefaultToast(Login_Activity.this, "网络请求失败，请检查网络");
-                Log.e(Tag, error.getMessage());
             }
         });
     }
