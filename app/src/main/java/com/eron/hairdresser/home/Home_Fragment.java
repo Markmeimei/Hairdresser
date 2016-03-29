@@ -106,7 +106,7 @@ public class Home_Fragment extends Fragment {
             @Override
             public void onFailure(VolleyError error) {
                 Toast_Common.DefaultToast(getActivity(), "网络请求失败，请检查网络");
-                Log.e(Tag,error.toString());
+                Log.e(Tag, error.toString());
             }
         });
     }
@@ -119,12 +119,15 @@ public class Home_Fragment extends Fragment {
 
     @OnItemClick(R.id.fragment_home_ListView)
     public void onItemClick(int position) {
-        if (position == 1)
-            IntentUtil.goToContext(getActivity(), Expire_Activity.class);
-        else if (position == 2) {
-            IntentUtil.goToContext(getActivity(), Birthday_Activity.class);
-        } else {
-
+        switch (position) {
+            case 0:
+                break;
+            case 1:
+                IntentUtil.goToContext(getActivity(), Expire_Activity.class);
+                break;
+            case 2:
+                IntentUtil.goToContext(getActivity(), Birthday_Activity.class);
+                break;
         }
     }
 }
