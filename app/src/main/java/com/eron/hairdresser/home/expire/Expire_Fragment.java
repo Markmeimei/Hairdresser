@@ -86,7 +86,7 @@ public class Expire_Fragment extends Fragment implements SwipeRefreshLayout.OnRe
 
             @Override
             public void onFailure(VolleyError error) {
-
+                Toast_Common.DefaultToast(getActivity(), "网络请求失败，请检查网络");
             }
         });
     }
