@@ -33,9 +33,7 @@ public class AddForm_Activity_ListView_Adapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        if (modelList == null)
-            return 0;
-        return modelList.size();
+        return modelList == null ? 0 : modelList.size();
     }
 
     @Override

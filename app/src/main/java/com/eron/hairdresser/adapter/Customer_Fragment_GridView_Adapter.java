@@ -26,8 +26,6 @@ public class Customer_Fragment_GridView_Adapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        if (ConstantResource.getCustpmerList() == null)
-            return 0;
         return ConstantResource.getCustpmerList() == null ? 0 : ConstantResource.getCustpmerList().size();
     }
 

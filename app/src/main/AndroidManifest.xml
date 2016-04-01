@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <!-- 访问网络 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    // 允许应用写（非读）用户的外部存储器
+    <!-- 允许应用写（非读）用户的外部存储器 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -18,6 +18,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- 登录界面 -->
         <activity android:name=".register.Login_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,21 +27,50 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- 导航栏 -->
         <activity android:name=".TabHost_Activity" />
+        <!-- 设置 -->
         <activity android:name=".hairdresser.setting.Setting_Activity" />
+        <!-- 公司介绍 -->
         <activity android:name=".read.companyProfile.CompanyProfile_Activity" />
+        <!-- 烫染列表 -->
         <activity android:name=".customer.permDye.PermDye_Activity" />
+        <!-- 生日提示 -->
         <activity android:name=".home.birthday.Birthday_Activity" />
+        <!-- 营养列表 -->
         <activity android:name=".customer.nutrition.Nutrition_Activity" />
+        <!-- 头皮SPA列表 -->
         <activity android:name=".customer.SPA.SPA_Activity" />
+        <!-- 美容列表 -->
         <activity android:name=".customer.hairdressing.Hairdressing_Activity" />
+        <!-- 烫染、营养、头皮SPA、美容 详情页 -->
         <activity android:name=".customer.Details_Activity" />
+        <!-- 发型图片的瀑布流 -->
         <activity android:name=".read.hairStyleImg.HairStyleImg_Activity" />
+        <!-- 添加新会员界面 -->
         <activity android:name=".customer.newUser.NewUser_Activity" />
+        <!-- 到期顾客列表（ViewPager） -->
         <activity android:name=".home.expire.Expire_Activity" />
+        <!-- 烫染、营养、头皮SPA、美容 新记录界面 （通过Intent变换不同的内容） -->
         <activity android:name=".customer.newUser.NewRecord_Activity" />
+        <!-- 添加流水单 -->
         <activity android:name=".addform.AddForm_Activity" />
-        <activity android:name=".read.product.ProductDetails_Activity"></activity>
+        <!-- 产品列表 -->
+        <activity android:name=".read.product.Product_Activity" />
+        <!-- 产品详情页 -->
+        <activity android:name=".read.product.ProductDetails_Activity" />
+        <!-- 业绩查询 -->
+        <activity android:name=".hairdresser.Check_Performance" />
+        <!-- 更改密码 -->
+        <activity android:name=".hairdresser.setting.ModifyPWDActivity" />
+        <!-- 建议反馈 -->
+        <activity android:name=".hairdresser.setting.FeedbackActivity" />
+        <!-- 关于 -->
+        <activity android:name=".hairdresser.setting.AboutActivity" />
+        <!-- 数据分析 -->
+        <activity android:name=".hairdresser.Analysis_Fragment" />
+        <activity android:name=".home.subscribe.Subscribe_Activity" />
+        <activity android:name=".hairdresser.AccountBook_Activity"></activity>
     </application>
 
 </manifest>

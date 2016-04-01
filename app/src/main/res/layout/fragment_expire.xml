@@ -3,11 +3,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/fragment_expire_ListView"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/fragment_expire_SwipeRefreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="@null"
-        android:scrollbars="none" />
+        android:layout_height="match_parent">
 
+        <ListView
+            android:id="@+id/fragment_expire_ListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:scrollbars="none" />
+    </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

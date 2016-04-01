@@ -7,78 +7,33 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_50"
+        android:layout_height="@dimen/dimen_80"
         android:layout_marginBottom="@dimen/dimen_5"
         android:layout_marginLeft="@dimen/dimen_10"
         android:layout_marginRight="@dimen/dimen_10"
         android:layout_marginTop="@dimen/dimen_5"
-        android:background="@drawable/shape_imaginary_line_expire"
-        android:orientation="horizontal">
+        android:background="@drawable/shape_border_line"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dimen_10"
+        android:paddingLeft="@dimen/dimen_5"
+        android:paddingTop="@dimen/dimen_10">
 
-        <RelativeLayout
-            android:layout_width="@dimen/dimen_0"
-            android:layout_height="match_parent"
-            android:layout_weight="0.1">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:paddingBottom="@dimen/dimen_10"
-                android:scaleType="fitXY"
-                android:src="@mipmap/img_adapter_expire_activity_listview_title" />
-
-            <TextView
-                android:id="@+id/adapter_expire_activity_listview_Ranking"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dimen_4"
-                android:layout_marginTop="@dimen/dimen_6"
-                android:text="1"
-                android:textColor="@color/white" />
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.45"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/adapter_expire_activity_listview_CardNumber"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_0"
-                android:layout_weight="1"
-                android:ellipsize="end"
-                android:gravity="center_vertical"
-                android:padding="@dimen/dimen_3"
-                android:singleLine="true"
-                android:text="1234567" />
-
-            <TextView
-                android:id="@+id/adapter_expire_activity_listview_Type"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_0"
-                android:layout_weight="1"
-                android:ellipsize="end"
-                android:gravity="center_vertical"
-                android:padding="@dimen/dimen_3"
-                android:singleLine="true"
-                android:text="预约服务：烫发" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="@dimen/dimen_0.5"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="@dimen/dimen_5"
-            android:layout_marginTop="@dimen/dimen_5"
-            android:background="@color/line_color" />
+        <TextView
+            android:id="@+id/adapter_expire_activity_listview_Ranking"
+            android:layout_width="@dimen/dimen_50"
+            android:layout_height="@dimen/dimen_50"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/shape_gray_round"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="1"
+            android:textColor="@color/text_color4"
+            android:textSize="25sp" />
 
         <LinearLayout
             android:layout_width="@dimen/dimen_0"
             android:layout_height="match_parent"
-            android:layout_weight="0.45"
+            android:layout_weight="0.4"
             android:orientation="vertical">
 
             <TextView
@@ -88,9 +43,11 @@
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:gravity="center_vertical"
-                android:padding="@dimen/dimen_3"
+                android:paddingLeft="@dimen/dimen_10"
                 android:singleLine="true"
-                android:text="姓名：刘晓晨女士" />
+                android:text="姓名"
+                android:textColor="@color/text_color4"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/adapter_expire_activity_listview_Phone"
@@ -99,9 +56,46 @@
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:gravity="center_vertical"
-                android:padding="@dimen/dimen_3"
+                android:paddingLeft="@dimen/dimen_10"
                 android:singleLine="true"
-                android:text="电话：13888888888" />
+                android:text="电话"
+                android:textColor="@color/text_color4"
+                android:textSize="14sp" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/adapter_expire_activity_listview_Time"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_0"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:paddingRight="@dimen/dimen_10"
+                android:paddingTop="@dimen/dimen_5"
+                android:singleLine="true"
+                android:text="2016/03/33"
+                android:textColor="@color/text_color4"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/adapter_expire_activity_listview_Type"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_0"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dimen_15"
+                android:singleLine="true"
+                android:text="类型"
+                android:textColor="@color/text_color4"
+                android:textSize="14sp" />
+        </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>

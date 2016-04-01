@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.eron.hairdresser.R;
 import com.eron.hairdresser.model.Expire_Model;
+import com.lin.framwork.utils.SpannableStringUtil;
 
 import java.util.List;
 
@@ -21,17 +22,18 @@ import butterknife.ButterKnife;
 public class Expire_Activity_ListView_Adapter extends BaseAdapter {
     private LayoutInflater inflater;
     private List<Expire_Model> modelList;
+    private Context context;
 
     public Expire_Activity_ListView_Adapter(Context context, List<Expire_Model> list) {
         this.inflater = LayoutInflater.from(context);
         this.modelList = list;
+        this.context = context;
     }
 
     @Override
     public int getCount() {
-        if (modelList == null)
-            return 0;
-        return modelList.size();
+
+        return modelList == null ? 0 : modelList.size();
     }
 
     @Override
@@ -54,19 +56,23 @@ public class Expire_Activity_ListView_Adapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
+        String Type = context.getResources().getString(R.string.type) + modelList.get(0).getObject().get(position).getLength();
+        String Name = context.getResources().getString(R.string.name) + modelList.get(0).getObject().get(position).getName();
+        String Phone = context.getResources().getString(R.string.phone) + modelList.get(0).getObject().get(position).getPhone();
+
         holder.adapterExpireActivityListviewRanking.setText((position + 1) + "");
-        holder.adapterExpireActivityListviewCardNumber.setText("VIP卡号：" + modelList.get(position).getCardNumber());
-        holder.adapterExpireActivityListviewType.setText("预约服务：" + modelList.get(position).getType());
-        holder.adapterExpireActivityListviewName.setText("姓名：" + modelList.get(position).getName());
-        holder.adapterExpireActivityListviewPhone.setText("电话" + modelList.get(position).getPhone());
+        holder.adapterExpireActivityListviewTime.setText("16/3/30");
+        holder.adapterExpireActivityListviewType.setText(SpannableStringUtil.getForegroundColor(Type, context.getResources().getColor(R.color.text_color1), 4, Type.length()));
+        holder.adapterExpireActivityListviewName.setText(SpannableStringUtil.getForegroundColor(Name, context.getResources().getColor(R.color.text_color1), 4, Name.length()));
+        holder.adapterExpireActivityListviewPhone.setText(SpannableStringUtil.getForegroundColor(Phone, context.getResources().getColor(R.color.text_color1), 4, Phone.length()));
         return convertView;
     }
 
     static class ViewHolder {
         @Bind(R.id.adapter_expire_activity_listview_Ranking)
         TextView adapterExpireActivityListviewRanking;
-        @Bind(R.id.adapter_expire_activity_listview_CardNumber)
-        TextView adapterExpireActivityListviewCardNumber;
+        @Bind(R.id.adapter_expire_activity_listview_Time)
+        TextView adapterExpireActivityListviewTime;
         @Bind(R.id.adapter_expire_activity_listview_Type)
         TextView adapterExpireActivityListviewType;
         @Bind(R.id.adapter_expire_activity_listview_Name)

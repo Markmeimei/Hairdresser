@@ -5,15 +5,15 @@
     android:orientation="vertical">
 
     <com.eron.hairdresser.views.headTitle.HeadTitle xmlns:title="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/activity_expire_HeadTitle"
+        android:id="@+id/activity_account_book_HeadTitle"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_50"
         title:imgLeft="@mipmap/head_title_return"
-        title:titleCenter="@string/head_title_expire"
-        title:titleLeft="@string/head_title_home" />
+        title:titleCenter="@string/head_title_account_book"
+        title:titleLeft="@string/head_title_hairdresser" />
 
     <RadioGroup
-        android:id="@+id/activity_expire_RadioGroup"
+        android:id="@+id/activity_account_book_RadioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -22,7 +22,7 @@
         android:paddingTop="@dimen/dimen_10">
 
         <RadioButton
-            android:id="@+id/activity_expire_RadioButton01"
+            android:id="@+id/activity_account_book_RadioButton01"
             android:layout_width="@dimen/dimen_0"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -33,7 +33,7 @@
             android:textSize="16sp" />
 
         <RadioButton
-            android:id="@+id/activity_expire_RadioButton02"
+            android:id="@+id/activity_account_book_RadioButton02"
             android:layout_width="@dimen/dimen_0"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -44,7 +44,7 @@
             android:textSize="16sp" />
 
         <RadioButton
-            android:id="@+id/activity_expire_RadioButton03"
+            android:id="@+id/activity_account_book_RadioButton03"
             android:layout_width="@dimen/dimen_0"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -55,7 +55,7 @@
             android:textSize="16sp" />
 
         <RadioButton
-            android:id="@+id/activity_expire_RadioButton04"
+            android:id="@+id/activity_account_book_RadioButton04"
             android:layout_width="@dimen/dimen_0"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -66,7 +66,7 @@
             android:textSize="16sp" />
 
         <RadioButton
-            android:id="@+id/activity_expire_RadioButton05"
+            android:id="@+id/activity_account_book_RadioButton05"
             android:layout_width="@dimen/dimen_0"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -83,7 +83,7 @@
         android:background="@color/line_color" />
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/activity_expire_ViewPager"
+        android:id="@+id/activity_account_book_ViewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background" />

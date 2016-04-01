@@ -73,11 +73,19 @@ public class Hairdresser_Fragment extends Fragment {
 
     @OnItemClick(R.id.fragment_hairdresser_ListView)
     public void onItemClick(int position) {
-        Toast_Common.CenterToast(getActivity(), position + "");
-        if(position == 1){
-            startActivity(new Intent(getActivity(),Check_Performance.class));
-        }else if(position == 3){
-            startActivity(new Intent(getActivity(),Analysis_Fragment.class));
+        switch (position){
+            case 0:
+                IntentUtil.goToContext(getActivity(), AccountBook_Activity.class);
+                break;
+            case 1:
+                IntentUtil.goToContext(getActivity(), Check_Performance.class);
+                break;
+            case 2:
+                Toast_Common.CenterToast(getActivity(), position + "");
+                break;
+            case 3:
+                IntentUtil.goToContext(getActivity(), Analysis_Fragment.class);
+                break;
         }
     }
 

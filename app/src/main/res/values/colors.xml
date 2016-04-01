@@ -15,12 +15,13 @@
     <!--head_title字体颜色-->
     <color name="head_title_text">#F0F0F0</color>
     <!--暂时背景颜色-->
-    <color name="background">#EDEDED</color>
+    <color name="background">#F5F5F5</color>
     <!--全部字体颜色-->
     <color name="text_color">#777777</color>
-    <color name="text_color1">#323232</color>
+    <color name="text_color1">#333333</color>
     <color name="text_color2">#5FA8EC</color>
-    <color name="text_color3">#b3b3b3</color>
+    <color name="text_color3">#B3B3B3</color>
+    <color name="text_color4">#B9B9B9</color>
     <!--全部按钮颜色-->
     <color name="button_color">#FF9536</color>
 

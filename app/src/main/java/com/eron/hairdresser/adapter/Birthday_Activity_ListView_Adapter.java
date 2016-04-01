@@ -67,14 +67,14 @@ public class Birthday_Activity_ListView_Adapter extends BaseAdapter {
         }
 
         String Date = "";
-        if (modelList.get(position).getTime().indexOf("农") != -1) {
-            String Date2 = modelList.get(position).getTime().substring(0, modelList.get(position).getTime().indexOf("农"));
-            String Date3 = modelList.get(position).getTime().substring(modelList.get(position).getTime().indexOf("农"), modelList.get(position).getTime().length());
+        if (modelList.get(0).getObject().get(position).getBirth().indexOf("农") != -1) {
+            String Date2 = modelList.get(0).getObject().get(position).getBirth();
+            String Date3 = modelList.get(0).getObject().get(position).getBirth();
             Date = convertView.getResources().getString(R.string.adapter_birthday_activity_listview_today) + Date2 +
                     convertView.getResources().getString(R.string.adapter_birthday_activity_listview_line) + Date3;
         }
 
-        String Name = convertView.getResources().getString(R.string.adapter_birthday_activity_listview_today) + modelList.get(position).getName() +
+        String Name = convertView.getResources().getString(R.string.adapter_birthday_activity_listview_today) + modelList.get(0).getObject().get(position).getName() +
                 convertView.getResources().getString(R.string.adapter_birthday_activity_listview_age);
         holder.adapterBirthdayActivityListviewDate.setText(SpannableStringUtil.getForegroundColor(Date, convertView.getResources().getColor(R.color.text_color2), 5, Date.length()));
         holder.adapterBirthdayActivityListviewName.setText(SpannableStringUtil.getForegroundColor(Name, convertView.getResources().getColor(R.color.text_color2), 5, Name.indexOf("岁")));
@@ -89,7 +89,7 @@ public class Birthday_Activity_ListView_Adapter extends BaseAdapter {
         holder.adapterBirthdayActivityListviewLinearLayoutUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (modelList.get(position).getShow() == false) {
+                if (modelList.get(position).isShow() == false) {
                     holder.adapterBirthdayActivityListviewLinearLayoutDown.setVisibility(View.VISIBLE);
                     modelList.get(position).setShow(true);
                 } else {
@@ -229,7 +229,7 @@ public class Birthday_Activity_ListView_Adapter extends BaseAdapter {
         holder.adapterBirthdayActivityListviewCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IntentUtil.callPhone(context, "18663306807");
+                IntentUtil.dialPhones(context, "18663306807");
             }
         });
 
@@ -281,9 +281,9 @@ public class Birthday_Activity_ListView_Adapter extends BaseAdapter {
         @Bind(R.id.adapter_birthday_activity_listview_Button)
         Button adapterBirthdayActivityListviewButton;
         @Bind(R.id.adapter_birthday_activity_listview_Call)
-        TextView adapterBirthdayActivityListviewCall;
+        LinearLayout adapterBirthdayActivityListviewCall;
         @Bind(R.id.adapter_birthday_activity_listview_Ignore)
-        TextView adapterBirthdayActivityListviewIgnore;
+        LinearLayout adapterBirthdayActivityListviewIgnore;
         @Bind(R.id.adapter_birthday_activity_listview_LinearLayout_Down)
         LinearLayout adapterBirthdayActivityListviewLinearLayoutDown;
 

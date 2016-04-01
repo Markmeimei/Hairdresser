@@ -34,8 +34,6 @@ public class Hairdresser_Fragment_ListView_Adapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        if (textList == null)
-            return 0;
         return textList == null ? 0 : textList.size();
     }
 

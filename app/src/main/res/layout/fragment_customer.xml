@@ -10,7 +10,7 @@
         android:layout_height="@dimen/dimen_50"
         android:layout_alignParentTop="true"
         title:titleCenter="@string/head_title_customer"
-        title:imgRight="@mipmap/img_fragment_customer_new_user"/>
+        title:titleRight="添加会员" />
 
     <LinearLayout
         android:layout_width="match_parent"

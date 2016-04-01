@@ -15,6 +15,7 @@ import com.eron.hairdresser.R;
 import com.eron.hairdresser.adapter.Home_Fragment_ListView_Adapter;
 import com.eron.hairdresser.home.birthday.Birthday_Activity;
 import com.eron.hairdresser.home.expire.Expire_Activity;
+import com.eron.hairdresser.home.subscribe.Subscribe_Activity;
 import com.eron.hairdresser.model.HomeHint_Model;
 import com.eron.hairdresser.views.headTitle.HeadTitle;
 import com.lin.framwork.application.ApplicationTools;
@@ -70,7 +71,6 @@ public class Home_Fragment extends Fragment {
     }
 
     private void Init() {
-        getData();
         stringList = new ArrayList<>();
         stringList.add("预约顾客" + 0 + "位");
         stringList.add("到期顾客" + 0 + "位");
@@ -86,6 +86,7 @@ public class Home_Fragment extends Fragment {
         ASimpleCache.get(getActivity()).put("birthdayTemplateA", "今天是你的生日，我求上帝赐给你世界上最宝贵的礼物，上帝说就赐给你一生平安！一世健康！这两样礼物你满意吗？祝生日快乐！");
         ASimpleCache.get(getActivity()).put("birthdayTemplateB", "今天你快乐吗？我知道你肯定说不快乐，因为我的祝福还没有到啊，送你一份生日礼物。希望你年年有今日，岁岁有今朝。");
         ASimpleCache.get(getActivity()).put("birthdayTemplateC", "长长的距离，长长的线，长长的思念永不断；长长的时间，长长的挂念，长长的友谊永不变，祝你金钱不缺，微笑不断，笑容洒遍每一天。生日快乐！");
+        getData();
     }
 
     private void getData() {
@@ -121,6 +122,7 @@ public class Home_Fragment extends Fragment {
     public void onItemClick(int position) {
         switch (position) {
             case 0:
+                IntentUtil.goToContext(getActivity(), Subscribe_Activity.class);
                 break;
             case 1:
                 IntentUtil.goToContext(getActivity(), Expire_Activity.class);

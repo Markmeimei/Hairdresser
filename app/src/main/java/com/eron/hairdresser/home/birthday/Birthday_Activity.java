@@ -36,12 +36,12 @@ public class Birthday_Activity extends AppCompatActivity implements SwipeRefresh
     SwipeRefreshLayout activityBirthdaySwipeRefreshLayout;
 
     private Birthday_Activity_ListView_Adapter listView_adapter;
-    private List<Birthday_Model> modelList;
+    private List<Birthday_Model> modelList = new ArrayList<>();
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            Toast_Common.DefaultToast(Birthday_Activity.this, "刷新");
+            getData();
             activityBirthdaySwipeRefreshLayout.setRefreshing(false);
         }
     };
@@ -55,25 +55,6 @@ public class Birthday_Activity extends AppCompatActivity implements SwipeRefresh
     }
 
     private void Init() {
-        modelList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            Birthday_Model model = new Birthday_Model();
-            if (i % 4 == 0) {
-                model.setImg("");
-                model.setAge("22岁");
-                model.setTime("2016年3月14日农历二月初八");
-                model.setName("林炜智先生22");
-                model.setShow(false);
-                modelList.add(model);
-            } else {
-                model.setImg("");
-                model.setAge("80岁");
-                model.setTime("2016年3月14日农历二月初八");
-                model.setName("小明");
-                model.setShow(false);
-                modelList.add(model);
-            }
-        }
         listView_adapter = new Birthday_Activity_ListView_Adapter(this, modelList);
         Content();
     }
@@ -92,7 +73,8 @@ public class Birthday_Activity extends AppCompatActivity implements SwipeRefresh
         new VolleyUtil<>().post(ConfigUrl.Birthday_ActivityUrl, Birthday_Model.class, Tag, map, new VolleyUtil.PostCallback() {
             @Override
             public void onSuccess(String result, List list) {
-
+                modelList = list;
+                listView_adapter.notifyDataSetChanged();
             }
 
             @Override

@@ -67,9 +67,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_5"
         android:background="@color/white"
-        android:visibility="gone"
         android:orientation="vertical"
-        android:paddingTop="@dimen/dimen_10">
+        android:paddingTop="@dimen/dimen_10"
+        android:visibility="gone">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -95,10 +95,10 @@
                 android:layout_height="@dimen/dimen_70"
                 android:layout_margin="@dimen/dimen_10"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:background="@drawable/selector_adapter_birthday_activity_listview_checkbox02"
-                android:text="信息模板B"
                 android:button="@null"
+                android:gravity="center"
+                android:text="信息模板B"
                 android:textColor="@color/text_color"
                 android:textSize="18sp" />
 
@@ -108,9 +108,9 @@
                 android:layout_height="@dimen/dimen_70"
                 android:layout_margin="@dimen/dimen_10"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:button="@null"
                 android:background="@drawable/selector_adapter_birthday_activity_listview_checkbox03"
+                android:button="@null"
+                android:gravity="center"
                 android:text="信息模板C"
                 android:textColor="@color/text_color"
                 android:textSize="18sp" />
@@ -121,8 +121,8 @@
             android:id="@+id/adapter_birthday_activity_listview_Button"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_45"
-            android:layout_marginLeft="@dimen/dimen_20"
-            android:layout_marginRight="@dimen/dimen_20"
+            android:layout_marginLeft="@dimen/dimen_10"
+            android:layout_marginRight="@dimen/dimen_10"
             android:background="@drawable/selector_adapter_birthday_activity_listview_button"
             android:text="编辑短信"
             android:textColor="@color/white" />
@@ -139,34 +139,60 @@
                 android:layout_height="match_parent"
                 android:background="@color/line_color" />
 
-            <TextView
+            <LinearLayout
                 android:id="@+id/adapter_birthday_activity_listview_Call"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dimen_10"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:drawableLeft="@mipmap/img_adapter_birthday_activity_listview_phone"
-                android:gravity="center"
-                android:text="电话祝福"
-                android:textColor="@color/text_color"
-                android:textSize="16sp" />
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6"
+                    android:padding="@dimen/dimen_10"
+                    android:src="@mipmap/img_adapter_birthday_activity_listview_phone" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawablePadding="@dimen/dimen_5"
+                    android:gravity="center_vertical"
+                    android:text="电话祝福"
+                    android:textColor="@color/text_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
 
             <View
                 android:layout_width="@dimen/dimen_0.5"
                 android:layout_height="match_parent"
                 android:background="@color/line_color" />
 
-            <TextView
+            <LinearLayout
                 android:id="@+id/adapter_birthday_activity_listview_Ignore"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dimen_10"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:drawableLeft="@mipmap/img_adapter_birthday_activity_listview_phone"
-                android:gravity="center"
-                android:text="忽略"
-                android:textColor="@color/text_color"
-                android:textSize="16sp" />
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6"
+                    android:padding="@dimen/dimen_10"
+                    android:src="@mipmap/img_adapter_birthday_activity_listview_ignore" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawablePadding="@dimen/dimen_5"
+                    android:gravity="center_vertical"
+                    android:text="忽略"
+                    android:textColor="@color/text_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
 
             <View
                 android:layout_width="@dimen/dimen_0.5"
