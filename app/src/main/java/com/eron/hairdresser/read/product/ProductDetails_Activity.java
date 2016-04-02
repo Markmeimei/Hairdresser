@@ -43,21 +43,18 @@ public class ProductDetails_Activity extends AppCompatActivity {
 
     private void Init() {
         model = new Product_Model();
-        model.setName("产品名称");
-        model.setType("热烫");
-        model.setPrice("￥10086");
-        model.setEffect("这里是功效");
-        model.setIngredient("这里是成分");
+        model.getObject().get(0).setTitle("产品");
+        model.getObject().get(0).setAddtime("产品");
         Content();
     }
 
     private void Content() {
-        String Type = "类型    " + model.getType();
-        String Price = "价格    " + model.getPrice();
-        activityProductDetailsName.setText(model.getName());
+        String Type = "类型    " + model.getObject().get(0).getTitle();
+        String Price = "价格    " + model.getObject().get(0).getAddtime();
+        activityProductDetailsName.setText(model.getObject().get(0).getTitle());
         activityProductDetailsType.setText(SpannableStringUtil.getForegroundColor(Type, getResources().getColor(R.color.text_color1), 4, Type.length()));
         activityProductDetailsPrice.setText(SpannableStringUtil.getForegroundColor(Price, getResources().getColor(R.color.color_theme), 4, Price.length()));
-        activityProductDetailsEffect.setText(model.getEffect());
-        activityProductDetailsIngredient.setText(model.getIngredient());
+        activityProductDetailsEffect.setText(model.getObject().get(0).getTitle());
+        activityProductDetailsIngredient.setText(model.getObject().get(0).getTitle());
     }
 }

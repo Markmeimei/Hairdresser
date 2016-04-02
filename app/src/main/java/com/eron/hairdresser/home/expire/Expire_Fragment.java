@@ -3,7 +3,6 @@ package com.eron.hairdresser.home.expire;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
@@ -14,10 +13,13 @@ import android.widget.ListView;
 
 import com.android.volley.VolleyError;
 import com.eron.hairdresser.R;
-import com.eron.hairdresser.adapter.Expire_Activity_ListView_Adapter;
+import com.eron.hairdresser.adapter.Expire_Fragment_ListView_Adapter;
+import com.eron.hairdresser.model.Birthday_Model;
 import com.eron.hairdresser.model.Expire_Model;
+import com.google.gson.Gson;
 import com.lin.framwork.application.ApplicationTools;
 import com.lin.framwork.config.ConfigUrl;
+import com.lin.framwork.utils.IntentUtil;
 import com.lin.framwork.utils.VolleyUtil;
 import com.lin.framwork.views.Toast_Control.Toast_Common;
 
@@ -39,11 +41,10 @@ public class Expire_Fragment extends Fragment implements SwipeRefreshLayout.OnRe
     SwipeRefreshLayout fragmentExpireSwipeRefreshLayout;
 
     private View view;
-    private Expire_Activity_ListView_Adapter listView_adapter;
-    private List<Expire_Model> modelList = new ArrayList<>();
-
-
-    private Handler handler = new Handler();
+    private Expire_Fragment_ListView_Adapter listView_adapter;
+    private List<Expire_Model.ObjectBean> modelList;
+    private Handler handler;
+    private Map<String, String> map;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,12 +58,14 @@ public class Expire_Fragment extends Fragment implements SwipeRefreshLayout.OnRe
         if (parent != null) {
             parent.removeView(view);
         }
-        ButterKnife.bind(this, view);
         return view;
     }
 
     private void Init() {
-        listView_adapter = new Expire_Activity_ListView_Adapter(getActivity(), modelList);
+        map = new HashMap<String, String>();
+        handler = new Handler();
+        modelList = new ArrayList<>();
+        listView_adapter = new Expire_Fragment_ListView_Adapter(getActivity(), modelList);
         Content();
     }
 
@@ -75,12 +78,12 @@ public class Expire_Fragment extends Fragment implements SwipeRefreshLayout.OnRe
     }
 
     private void getData() {
-        Map<String, String> map = new HashMap<String, String>();
         map.put("uid", ApplicationTools.getUser().getObject().getId());
         new VolleyUtil<>().post(ConfigUrl.Expire_FragmentUrl, Expire_Model.class, Tag, map, new VolleyUtil.PostCallback() {
             @Override
             public void onSuccess(String result, List list) {
-                modelList.addAll(list);
+                Expire_Model model = new Gson().fromJson(result, Expire_Model.class);
+                modelList.addAll(model.getObject());
                 listView_adapter.notifyDataSetChanged();
             }
 
@@ -94,7 +97,7 @@ public class Expire_Fragment extends Fragment implements SwipeRefreshLayout.OnRe
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+//        ButterKnife.unbind(this);   会导致下拉刷新控件空指针异常
     }
 
     @OnItemClick(R.id.fragment_expire_ListView)
@@ -109,10 +112,10 @@ public class Expire_Fragment extends Fragment implements SwipeRefreshLayout.OnRe
             public void onClick(DialogInterface dialog, int which) {
                 switch (which) {
                     case 0:
-                        Toast_Common.DefaultToast(getActivity(), "打电话" + position);
+                        IntentUtil.dialPhones(getActivity(), modelList.get(position).getPhone());
                         break;
                     case 1:
-                        Toast_Common.DefaultToast(getActivity(), "发短信" + position);
+                        IntentUtil.sendMessage(getActivity(), modelList.get(position).getPhone(), "");
                         break;
                 }
             }
@@ -128,6 +131,6 @@ public class Expire_Fragment extends Fragment implements SwipeRefreshLayout.OnRe
                 getData();
                 fragmentExpireSwipeRefreshLayout.setRefreshing(false);
             }
-        }, 3000);
+        }, 1000);
     }
 }

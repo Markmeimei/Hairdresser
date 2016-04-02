@@ -9,7 +9,7 @@ import com.eron.hairdresser.R;
 import com.eron.hairdresser.adapter.Details_Activity_ListView_Adapter;
 import com.eron.hairdresser.adapter.Details_Activity_ListView_Adapter02;
 import com.eron.hairdresser.adapter.Details_Activity_ListView_Adapter03;
-import com.eron.hairdresser.common.IntentTag;
+import com.eron.hairdresser.common.TagName;
 import com.eron.hairdresser.customer.SPA.SPA_Activity;
 import com.eron.hairdresser.customer.nutrition.Nutrition_Activity;
 import com.eron.hairdresser.customer.permDye.PermDye_Activity;
@@ -57,7 +57,7 @@ public class Details_Activity extends AppCompatActivity {
         model.setHairLength("短");
         model.setPhone("18888888888");
 
-        if (intent.getStringExtra(IntentTag.DetailsTag).equals(PermDye_Activity.Tag)) {
+        if (intent.getStringExtra(TagName.DetailsTag).equals(PermDye_Activity.Tag)) {
             List<PermDye_Model> list1 = new ArrayList<>();
             for (int i = 0; i < 10; i++) {
                 PermDye_Model model1 = new PermDye_Model();
@@ -76,7 +76,7 @@ public class Details_Activity extends AppCompatActivity {
             Details_Activity_ListView_Adapter listView_adapter = new Details_Activity_ListView_Adapter(this, modelList.get(0).getPermDye_models());
             fragmentCustomerListView.addHeaderView(Views.getDetailsFirst(this, modelList));
             fragmentCustomerListView.setAdapter(listView_adapter);
-        } else if (intent.getStringExtra(IntentTag.DetailsTag).equals(Nutrition_Activity.Tag)) {
+        } else if (intent.getStringExtra(TagName.DetailsTag).equals(Nutrition_Activity.Tag)) {
             List<Nutrition_Model> list = new ArrayList<>();
             for (int i = 0; i < 10; i++) {
                 Nutrition_Model model1 = new Nutrition_Model();
@@ -95,7 +95,7 @@ public class Details_Activity extends AppCompatActivity {
             Details_Activity_ListView_Adapter02 listView_adapter02 = new Details_Activity_ListView_Adapter02(this, modelList.get(0).getNutrition_models());
             fragmentCustomerListView.addHeaderView(Views.getDetailsFirst(this, modelList));
             fragmentCustomerListView.setAdapter(listView_adapter02);
-        } else if (intent.getStringExtra(IntentTag.DetailsTag).equals(SPA_Activity.Tag)) {
+        } else if (intent.getStringExtra(TagName.DetailsTag).equals(SPA_Activity.Tag)) {
             List<SPA_Model> list = new ArrayList<>();
             for (int i = 0; i < 10; i++) {
                 SPA_Model model1 = new SPA_Model();

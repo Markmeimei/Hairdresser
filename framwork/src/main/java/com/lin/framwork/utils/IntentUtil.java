@@ -138,7 +138,7 @@ public final class IntentUtil {
      * @param smsContent  短信内容
      */
     public static void sendMessage(Context activity, String phoneNumber, String smsContent) {
-        if (phoneNumber == null || phoneNumber.length() < 4) {
+        if (phoneNumber == null || phoneNumber.length() < 1) {
             return;
         }
         Uri uri = Uri.parse("smsto:" + phoneNumber);

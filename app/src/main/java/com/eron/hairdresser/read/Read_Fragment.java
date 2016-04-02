@@ -11,6 +11,7 @@ import com.eron.hairdresser.R;
 import com.eron.hairdresser.adapter.Read_Fragment_GridView_Adapter_Centre;
 import com.eron.hairdresser.adapter.Read_Fragment_GridView_Adapter_Down;
 import com.eron.hairdresser.adapter.Read_Fragment_GridView_Adapter_Up;
+import com.eron.hairdresser.common.TagName;
 import com.eron.hairdresser.read.companyProfile.CompanyProfile_Activity;
 import com.eron.hairdresser.read.hairStyleImg.HairStyleImg_Activity;
 import com.eron.hairdresser.read.product.Product_Activity;
@@ -28,6 +29,7 @@ import butterknife.OnItemClick;
  * 阅读界面
  */
 public class Read_Fragment extends Fragment {
+    public final static String Tag = "Read_Fragment";
 
     @Bind(R.id.fragment_read_up)
     GridView fragmentReadUp;
@@ -85,15 +87,32 @@ public class Read_Fragment extends Fragment {
 
     @OnItemClick(R.id.fragment_read_up)
     public void onItemClick_up(int position) {
-        if (position == 0)
-            IntentUtil.goToContext(getActivity(), CompanyProfile_Activity.class);
-        else
-            Toast_Common.CenterToast(getActivity(), position + "up");
+        switch (position) {
+            case 0:
+                IntentUtil.goToContext(getActivity(), CompanyProfile_Activity.class, TagName.ReadTag, "2"); //公司简介
+                break;
+            case 1:
+                IntentUtil.goToContext(getActivity(), CompanyProfile_Activity.class, TagName.ReadTag, "3"); //迁升制度
+                break;
+            case 2:
+                IntentUtil.goToContext(getActivity(), CompanyProfile_Activity.class, TagName.ReadTag, "4"); //规章制度
+                break;
+        }
     }
 
     @OnItemClick(R.id.fragment_read_centre)
     public void onItemClick_centre(int position) {
-        IntentUtil.goToContext(getActivity(), Product_Activity.class);
+        switch (position) {
+            case 0:
+                IntentUtil.goToContext(getActivity(), Product_Activity.class, TagName.ReadTag, "1"); //烫发产品
+                break;
+            case 1:
+                IntentUtil.goToContext(getActivity(), Product_Activity.class, TagName.ReadTag, "2"); //染发产品
+                break;
+            case 2:
+                IntentUtil.goToContext(getActivity(), Product_Activity.class, TagName.ReadTag, "3"); //护发产品
+                break;
+        }
     }
 
     @OnItemClick(R.id.fragment_read_down)

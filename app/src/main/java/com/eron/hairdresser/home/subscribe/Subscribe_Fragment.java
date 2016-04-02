@@ -2,32 +2,49 @@ package com.eron.hairdresser.home.subscribe;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.android.volley.VolleyError;
 import com.eron.hairdresser.R;
-import com.eron.hairdresser.adapter.Expire_Activity_ListView_Adapter;
+import com.eron.hairdresser.adapter.Subscribe_Fragment_ListView_Adapter;
+import com.eron.hairdresser.model.Birthday_Model;
 import com.eron.hairdresser.model.Expire_Model;
+import com.google.gson.Gson;
+import com.lin.framwork.application.ApplicationTools;
+import com.lin.framwork.config.ConfigUrl;
+import com.lin.framwork.utils.IntentUtil;
+import com.lin.framwork.utils.VolleyUtil;
 import com.lin.framwork.views.Toast_Control.Toast_Common;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnItemClick;
 
-public class Subscribe_Fragment extends Fragment {
+public class Subscribe_Fragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
+    private final static String Tag = "Subscribe_Fragment";
 
     @Bind(R.id.fragment_subscribe_ListView)
     ListView fragmentSubscribeListView;
+    @Bind(R.id.fragment_subscribe_SwipeRefreshLayout)
+    SwipeRefreshLayout fragmentSubscribeSwipeRefreshLayout;
 
     private View view;
-    private Expire_Activity_ListView_Adapter listView_adapter;
+    private Subscribe_Fragment_ListView_Adapter listView_adapter;
+    private List<Expire_Model.ObjectBean> modelList;
+    private Handler handler;
+    private Map<String, String> map;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,19 +62,44 @@ public class Subscribe_Fragment extends Fragment {
     }
 
     private void Init() {
-        List<Expire_Model> modelList = new ArrayList<>();
-        listView_adapter = new Expire_Activity_ListView_Adapter(getActivity(), modelList);
+        handler = new Handler();
+        modelList = new ArrayList<>();
+        listView_adapter = new Subscribe_Fragment_ListView_Adapter(getActivity(), modelList);
         Content();
     }
 
     private void Content() {
         fragmentSubscribeListView.setAdapter(listView_adapter);
+        fragmentSubscribeSwipeRefreshLayout.setColorSchemeResources(R.color.adapter_birthday_activity_listview_checkbox01,
+                R.color.adapter_birthday_activity_listview_checkbox02, R.color.adapter_birthday_activity_listview_checkbox03);
+        fragmentSubscribeSwipeRefreshLayout.setOnRefreshListener(this);
+        getData();
     }
+
+    private void getData() {
+        map = new HashMap<String, String>();
+        map.put("uid", ApplicationTools.getUser().getObject().getId());
+        new VolleyUtil<>().post(ConfigUrl.Expire_FragmentUrl, Expire_Model.class, Tag, map, new VolleyUtil.PostCallback() {
+            @Override
+            public void onSuccess(String result, List list) {
+                Expire_Model model = new Gson().fromJson(result, Expire_Model.class);
+                modelList.addAll(model.getObject());
+                listView_adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(VolleyError error) {
+                Toast_Common.DefaultToast(getActivity(), "网络请求失败，请检查网络");
+            }
+        });
+    }
+
+
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+//        ButterKnife.unbind(this); 会导致下拉刷新控件空指针异常
     }
 
     @OnItemClick(R.id.fragment_subscribe_ListView)
@@ -72,13 +114,25 @@ public class Subscribe_Fragment extends Fragment {
             public void onClick(DialogInterface dialog, int which) {
                 switch (which) {
                     case 0:
-                        Toast_Common.DefaultToast(getActivity(), "打电话" + position);
+                        IntentUtil.dialPhones(getActivity(), modelList.get(position).getPhone());
                         break;
                     case 1:
-                        Toast_Common.DefaultToast(getActivity(), "发短信" + position);
+                        IntentUtil.sendMessage(getActivity(), modelList.get(position).getPhone(), "");
                         break;
                 }
             }
         }).show();
+    }
+
+    @Override
+    public void onRefresh() {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                modelList.clear();
+                getData();
+                fragmentSubscribeSwipeRefreshLayout.setRefreshing(false);
+            }
+        }, 1000);
     }
 }

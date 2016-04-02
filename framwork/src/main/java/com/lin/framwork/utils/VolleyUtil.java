@@ -81,7 +81,7 @@ public class VolleyUtil<T> implements Serializable {
                 String jsonString = response;
                 if (jsonString.startsWith("ï»¿"))
                     jsonString = jsonString.substring(3);
-                if (jsonString.startsWith("{"))
+                else if (jsonString.startsWith("{"))
                     jsonString = "{\"data\":[" + jsonString + "]}";
                 else if (jsonString.startsWith("["))
                     jsonString = "{\"data\":" + jsonString + "}";
@@ -99,6 +99,53 @@ public class VolleyUtil<T> implements Serializable {
             @Override
             public void onErrorResponse(VolleyError error) {
                 callback.onFailure(error);
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                return map;
+            }
+        };
+        stringRequest.setTag(Tag);
+        MyApplication.getHttpRequestQueue().add(stringRequest);
+    }
+
+    public void cancel(String Tag) {
+        MyApplication.getHttpRequestQueue().cancelAll(Tag);
+    }
+
+    /**
+     * Get请求解析Json（为了打印Log）
+     */
+    public void get(String Url, final String Tag) {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, Url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(final String response) {
+                Log.e(Tag, response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(Tag, error.toString());
+            }
+        });
+        stringRequest.setTag(Tag);
+        MyApplication.getHttpRequestQueue().add(stringRequest);
+    }
+
+    /**
+     * Post请求解析Json（为了打印Log）
+     */
+    public void post(String Url, final String Tag, final Map<String, String> map) {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(final String response) {
+                Log.e(Tag, response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(Tag, error.toString());
             }
         }) {
             @Override

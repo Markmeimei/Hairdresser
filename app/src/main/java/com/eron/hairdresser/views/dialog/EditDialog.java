@@ -3,13 +3,17 @@ package com.eron.hairdresser.views.dialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.eron.hairdresser.R;
+import com.eron.hairdresser.common.TagName;
 
 /**
  * Created by 林炜智 on 2016/3/14.
@@ -25,7 +29,7 @@ public class EditDialog extends Dialog {
 
     public static class Builder {
         private Context context;
-        private String title, message, positiveButtonText, negativeButtonText;
+        private String title, message, getmessage, positiveButtonText, negativeButtonText;
 
         private DialogInterface.OnClickListener positiveButtonClickListener, negativeButtonClickListener;
 
@@ -41,6 +45,14 @@ public class EditDialog extends Dialog {
         public Builder setMessage(int message) {
             this.message = (String) context.getText(message);
             return this;
+        }
+
+        public String getGetmessage() {
+            return getmessage;
+        }
+
+        public void setGetmessage(String getmessage) {
+            this.getmessage = getmessage;
         }
 
         public Builder setTitle(int title) {
@@ -96,8 +108,7 @@ public class EditDialog extends Dialog {
                 if (positiveButtonClickListener != null) {
                     ((Button) view.findViewById(R.id.views_edit_dialog_Positive)).setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
-                            positiveButtonClickListener.onClick(dialog,
-                                    DialogInterface.BUTTON_POSITIVE);
+                            positiveButtonClickListener.onClick(dialog, DialogInterface.BUTTON_POSITIVE);
                         }
                     });
                 }
@@ -108,15 +119,31 @@ public class EditDialog extends Dialog {
                 if (negativeButtonClickListener != null) {
                     ((Button) view.findViewById(R.id.views_edit_dialog_Negative)).setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
-                            negativeButtonClickListener.onClick(dialog,
-                                    DialogInterface.BUTTON_NEGATIVE);
+                            negativeButtonClickListener.onClick(dialog, DialogInterface.BUTTON_NEGATIVE);
                         }
                     });
                 }
             }
             // set the content message
             if (message != null) {
-                ((TextView) view.findViewById(R.id.views_edit_dialog_Message)).setText(message);
+                EditText text = (EditText) view.findViewById(R.id.views_edit_dialog_Message);
+                text.setText(message);
+                setGetmessage(message);
+                text.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                        setGetmessage(s.toString());
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+                        setGetmessage(s.toString());
+                    }
+                });
             }
             dialog.setContentView(view);
             return dialog;

@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.eron.hairdresser.R;
 import com.eron.hairdresser.adapter.SPA_Activity_ListView_Adapter;
-import com.eron.hairdresser.common.IntentTag;
+import com.eron.hairdresser.common.TagName;
 import com.eron.hairdresser.customer.Details_Activity;
 import com.eron.hairdresser.customer.newUser.NewRecord_Activity;
 import com.eron.hairdresser.model.Customer_Model;
@@ -67,7 +67,7 @@ public class SPA_Activity extends AppCompatActivity {
         activitySpaHeadTitle.setRightOnclick(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IntentUtil.goToContext(SPA_Activity.this, NewRecord_Activity.class, IntentTag.newRecordTag, Tag);
+                IntentUtil.goToContext(SPA_Activity.this, NewRecord_Activity.class, TagName.newRecordTag, Tag);
             }
         });
         activitySpaListView.setAdapter(listView_adapter);
@@ -75,7 +75,7 @@ public class SPA_Activity extends AppCompatActivity {
 
     @OnItemClick(R.id.activity_spa_ListView)
     public void onItemClick(int position) {
-        IntentUtil.goToContext(this, Details_Activity.class, IntentTag.DetailsTag, Tag);
+        IntentUtil.goToContext(this, Details_Activity.class, TagName.DetailsTag, Tag);
     }
 
     @OnClick(R.id.activity_spa_Filtrate)

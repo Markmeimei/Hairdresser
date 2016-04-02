@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.eron.hairdresser.R;
 import com.eron.hairdresser.model.Product_Model;
 
@@ -22,9 +23,9 @@ import butterknife.ButterKnife;
 public class Product_Activity_ListView_Adapter extends BaseAdapter {
     private LayoutInflater inflater;
     private Context context;
-    private List<Product_Model> modelList;
+    private List<Product_Model.ObjectBean> modelList;
 
-    public Product_Activity_ListView_Adapter(Context context, List<Product_Model> list) {
+    public Product_Activity_ListView_Adapter(Context context, List<Product_Model.ObjectBean> list) {
         this.inflater = LayoutInflater.from(context);
         this.context = context;
         this.modelList = list;
@@ -55,9 +56,11 @@ public class Product_Activity_ListView_Adapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        holder.adapterProductActivityListviewName.setText(modelList.get(position).getName());
+        Glide.with(context).load(modelList.get(position).getPicture())
+                .placeholder(R.mipmap.ic_launcher).error(R.mipmap.img_label).crossFade().into(holder.adapterProductActivityListviewImgaeView);
+        holder.adapterProductActivityListviewName.setText(modelList.get(position).getTitle());
         holder.adapterProductActivityListviewType.setText("类型    " + modelList.get(position).getType());
-        holder.adapterProductActivityListviewPrice.setText("价格    " + modelList.get(position).getPrice());
+        holder.adapterProductActivityListviewPrice.setText("价格    " + modelList.get(position).getAddtime());
         return convertView;
     }
 

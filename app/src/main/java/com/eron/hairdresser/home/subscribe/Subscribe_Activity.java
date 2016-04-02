@@ -39,6 +39,7 @@ public class Subscribe_Activity extends AppCompatActivity {
     ViewPager activitySubscribeViewPager;
 
     private Subscribe_Activity_ViewPager_Adapter viewPager_adapter;
+    private List<Fragment> fragments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +50,7 @@ public class Subscribe_Activity extends AppCompatActivity {
     }
 
     private void Init() {
-        List<Fragment> fragments = new ArrayList<>();
+        fragments = new ArrayList<>();
         fragments.add(new Subscribe_Fragment());
         fragments.add(new Subscribe_Fragment());
         fragments.add(new Subscribe_Fragment());

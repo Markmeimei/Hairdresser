@@ -9,21 +9,12 @@
         android:id="@+id/activity_company_profile_HeadTitle"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_50"
-        title:titleLeft="@string/head_title_read"
         title:imgLeft="@mipmap/head_title_return"
-        title:titleCenter="@string/head_title_company_profile" />
+        title:titleCenter="@string/head_title_company_profile"
+        title:titleLeft="@string/head_title_read" />
 
-    <ImageView
+    <WebView
+        android:id="@+id/activity_company_profile_WebView"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_150"
-        android:scaleType="fitXY"
-        android:src="@mipmap/ic_company_profile" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/dimen_15"
-        android:text="@string/activity_company_profile"
-        android:textColor="@color/text_color"
-        android:textSize="16sp" />
+        android:layout_height="match_parent" />
 </LinearLayout>

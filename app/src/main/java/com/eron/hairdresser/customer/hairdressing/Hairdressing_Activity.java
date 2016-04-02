@@ -3,13 +3,12 @@ package com.eron.hairdresser.customer.hairdressing;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.eron.hairdresser.R;
 import com.eron.hairdresser.adapter.Hairdressing_Activity_ListView_Adapter;
-import com.eron.hairdresser.common.IntentTag;
+import com.eron.hairdresser.common.TagName;
 import com.eron.hairdresser.customer.Details_Activity;
 import com.eron.hairdresser.customer.newUser.NewRecord_Activity;
 import com.eron.hairdresser.model.Customer_Model;
@@ -68,7 +67,7 @@ public class Hairdressing_Activity extends AppCompatActivity {
         activityHairdressingHeadTitle.setRightOnclick(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IntentUtil.goToContext(Hairdressing_Activity.this, NewRecord_Activity.class, IntentTag.newRecordTag, Tag);
+                IntentUtil.goToContext(Hairdressing_Activity.this, NewRecord_Activity.class, TagName.newRecordTag, Tag);
             }
         });
 

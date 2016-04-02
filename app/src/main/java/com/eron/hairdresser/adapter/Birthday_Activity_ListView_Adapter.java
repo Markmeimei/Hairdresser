@@ -2,6 +2,7 @@ package com.eron.hairdresser.adapter;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.eron.hairdresser.R;
+import com.eron.hairdresser.common.TagName;
 import com.eron.hairdresser.model.Birthday_Model;
 import com.eron.hairdresser.views.Views;
 import com.eron.hairdresser.views.dialog.EditDialog;
@@ -32,22 +34,22 @@ import butterknife.ButterKnife;
 public class Birthday_Activity_ListView_Adapter extends BaseAdapter {
     private LayoutInflater inflater;
     private Context context;
-    private List<Birthday_Model> modelList;
+    private List<Birthday_Model.ObjectBean> model;
 
-    public Birthday_Activity_ListView_Adapter(Context context, List<Birthday_Model> list) {
+    public Birthday_Activity_ListView_Adapter(Context context, List<Birthday_Model.ObjectBean> model) {
         this.inflater = LayoutInflater.from(context);
         this.context = context;
-        this.modelList = list;
+        this.model = model;
     }
 
     @Override
     public int getCount() {
-        return modelList == null ? 0 : modelList.size();
+        return model == null ? 0 : model.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return modelList.get(position);
+        return model.get(position);
     }
 
     @Override
@@ -66,15 +68,10 @@ public class Birthday_Activity_ListView_Adapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        String Date = "";
-        if (modelList.get(0).getObject().get(position).getBirth().indexOf("农") != -1) {
-            String Date2 = modelList.get(0).getObject().get(position).getBirth();
-            String Date3 = modelList.get(0).getObject().get(position).getBirth();
-            Date = convertView.getResources().getString(R.string.adapter_birthday_activity_listview_today) + Date2 +
-                    convertView.getResources().getString(R.string.adapter_birthday_activity_listview_line) + Date3;
-        }
+        String Date = convertView.getResources().getString(R.string.adapter_birthday_activity_listview_today) + model.get(position).getBirth() +
+                convertView.getResources().getString(R.string.adapter_birthday_activity_listview_line) + model.get(position).getBirth();
 
-        String Name = convertView.getResources().getString(R.string.adapter_birthday_activity_listview_today) + modelList.get(0).getObject().get(position).getName() +
+        String Name = convertView.getResources().getString(R.string.adapter_birthday_activity_listview_today) + model.get(position).getName() +
                 convertView.getResources().getString(R.string.adapter_birthday_activity_listview_age);
         holder.adapterBirthdayActivityListviewDate.setText(SpannableStringUtil.getForegroundColor(Date, convertView.getResources().getColor(R.color.text_color2), 5, Date.length()));
         holder.adapterBirthdayActivityListviewName.setText(SpannableStringUtil.getForegroundColor(Name, convertView.getResources().getColor(R.color.text_color2), 5, Name.indexOf("岁")));
@@ -84,17 +81,16 @@ public class Birthday_Activity_ListView_Adapter extends BaseAdapter {
     }
 
     private void allClick(final ViewHolder holder, final int position) {
-        final CheckBox checkbox;
 
         holder.adapterBirthdayActivityListviewLinearLayoutUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (modelList.get(position).isShow() == false) {
+                if (model.get(position).isShow() == false) {
                     holder.adapterBirthdayActivityListviewLinearLayoutDown.setVisibility(View.VISIBLE);
-                    modelList.get(position).setShow(true);
+                    model.get(position).setShow(true);
                 } else {
                     holder.adapterBirthdayActivityListviewLinearLayoutDown.setVisibility(View.GONE);
-                    modelList.get(position).setShow(false);
+                    model.get(position).setShow(false);
                 }
             }
         });
@@ -116,7 +112,7 @@ public class Birthday_Activity_ListView_Adapter extends BaseAdapter {
                         @Override
                         public void onClick(View v) {
                             builder.setTitle("编写短信")
-                                    .setMessage(ASimpleCache.get(context).getAsString("birthdayTemplateA"))
+                                    .setMessage(ASimpleCache.get(context).getAsString(TagName.BirthdayTemplateA))
                                     .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
@@ -126,7 +122,7 @@ public class Birthday_Activity_ListView_Adapter extends BaseAdapter {
                                     }).setPositiveButton("发送", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    Toast_Common.DefaultToast(context, "发送");
+                                    IntentUtil.sendMessage(context, model.get(position).getPhone(), builder.getGetmessage());
                                     dialog.dismiss();
                                 }
                             }).create().show();
@@ -148,7 +144,7 @@ public class Birthday_Activity_ListView_Adapter extends BaseAdapter {
                         @Override
                         public void onClick(View v) {
                             builder.setTitle("编写短信")
-                                    .setMessage(ASimpleCache.get(context).getAsString("birthdayTemplateB"))
+                                    .setMessage(ASimpleCache.get(context).getAsString(TagName.BirthdayTemplateB))
                                     .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
@@ -158,7 +154,7 @@ public class Birthday_Activity_ListView_Adapter extends BaseAdapter {
                                     }).setPositiveButton("发送", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    Toast_Common.DefaultToast(context, "发送");
+                                    IntentUtil.sendMessage(context, model.get(position).getPhone(), builder.getGetmessage());
                                     dialog.dismiss();
                                 }
                             }).create().show();
@@ -180,7 +176,7 @@ public class Birthday_Activity_ListView_Adapter extends BaseAdapter {
                         @Override
                         public void onClick(View v) {
                             builder.setTitle("编写短信")
-                                    .setMessage(ASimpleCache.get(context).getAsString("birthdayTemplateC"))
+                                    .setMessage(ASimpleCache.get(context).getAsString(TagName.BirthdayTemplateC))
                                     .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
@@ -190,7 +186,7 @@ public class Birthday_Activity_ListView_Adapter extends BaseAdapter {
                                     }).setPositiveButton("发送", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    Toast_Common.DefaultToast(context, "发送");
+                                    IntentUtil.sendMessage(context, model.get(position).getPhone(), builder.getGetmessage());
                                     dialog.dismiss();
                                 }
                             }).create().show();
@@ -229,14 +225,15 @@ public class Birthday_Activity_ListView_Adapter extends BaseAdapter {
         holder.adapterBirthdayActivityListviewCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IntentUtil.dialPhones(context, "18663306807");
+                IntentUtil.dialPhones(context, model.get(position).getPhone());
             }
         });
 
         holder.adapterBirthdayActivityListviewIgnore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast_Common.DefaultToast(context, "忽略");
+                model.remove(position);
+                notifyDataSetChanged();
             }
         });
     }
@@ -257,7 +254,7 @@ public class Birthday_Activity_ListView_Adapter extends BaseAdapter {
                         }).setPositiveButton("发送", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast_Common.DefaultToast(context, "发送");
+                        IntentUtil.sendMessage(context, model.get(position).getPhone(), "");
                         dialog.dismiss();
                     }
                 }).create().show();

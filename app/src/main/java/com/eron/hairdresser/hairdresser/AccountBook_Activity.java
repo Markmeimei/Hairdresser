@@ -40,6 +40,7 @@ public class AccountBook_Activity extends AppCompatActivity {
     ViewPager activityAccountBookViewPager;
 
     private Expire_Activity_ViewPager_Adapter viewPager_adapter;
+    private List<Fragment> fragments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +51,7 @@ public class AccountBook_Activity extends AppCompatActivity {
     }
 
     private void Init() {
-        List<Fragment> fragments = new ArrayList<>();
+        fragments = new ArrayList<>();
         fragments.add(new Expire_Fragment());
         fragments.add(new Expire_Fragment());
         fragments.add(new Expire_Fragment());

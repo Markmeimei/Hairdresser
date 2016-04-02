@@ -19,12 +19,12 @@ import butterknife.ButterKnife;
 /**
  * Created by 林炜智 on 2016/3/21.
  */
-public class Expire_Activity_ListView_Adapter extends BaseAdapter {
+public class Expire_Fragment_ListView_Adapter extends BaseAdapter {
     private LayoutInflater inflater;
-    private List<Expire_Model> modelList;
+    private List<Expire_Model.ObjectBean> modelList;
     private Context context;
 
-    public Expire_Activity_ListView_Adapter(Context context, List<Expire_Model> list) {
+    public Expire_Fragment_ListView_Adapter(Context context, List<Expire_Model.ObjectBean> list) {
         this.inflater = LayoutInflater.from(context);
         this.modelList = list;
         this.context = context;
@@ -32,7 +32,6 @@ public class Expire_Activity_ListView_Adapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-
         return modelList == null ? 0 : modelList.size();
     }
 
@@ -56,9 +55,9 @@ public class Expire_Activity_ListView_Adapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        String Type = context.getResources().getString(R.string.type) + modelList.get(0).getObject().get(position).getLength();
-        String Name = context.getResources().getString(R.string.name) + modelList.get(0).getObject().get(position).getName();
-        String Phone = context.getResources().getString(R.string.phone) + modelList.get(0).getObject().get(position).getPhone();
+        String Type = context.getResources().getString(R.string.type) + modelList.get(position).getLength();
+        String Name = context.getResources().getString(R.string.name) + modelList.get(position).getName();
+        String Phone = context.getResources().getString(R.string.phone) + modelList.get(position).getPhone();
 
         holder.adapterExpireActivityListviewRanking.setText((position + 1) + "");
         holder.adapterExpireActivityListviewTime.setText("16/3/30");

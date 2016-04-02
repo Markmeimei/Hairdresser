@@ -13,14 +13,17 @@ import android.widget.TextView;
 import com.android.volley.VolleyError;
 import com.eron.hairdresser.R;
 import com.eron.hairdresser.adapter.Home_Fragment_ListView_Adapter;
+import com.eron.hairdresser.common.TagName;
 import com.eron.hairdresser.home.birthday.Birthday_Activity;
 import com.eron.hairdresser.home.expire.Expire_Activity;
 import com.eron.hairdresser.home.subscribe.Subscribe_Activity;
 import com.eron.hairdresser.model.HomeHint_Model;
 import com.eron.hairdresser.views.headTitle.HeadTitle;
+import com.google.gson.Gson;
 import com.lin.framwork.application.ApplicationTools;
 import com.lin.framwork.config.ConfigUrl;
 import com.lin.framwork.utils.ASimpleCache;
+import com.lin.framwork.utils.CipherUtils;
 import com.lin.framwork.utils.DateUtils;
 import com.lin.framwork.utils.IntentUtil;
 import com.lin.framwork.utils.VolleyUtil;
@@ -52,7 +55,6 @@ public class Home_Fragment extends Fragment {
 
     private View view;
     private Home_Fragment_ListView_Adapter listView_adapter;
-    private List<HomeHint_Model> modelList;
     private List<String> stringList;
 
     @Override
@@ -72,9 +74,9 @@ public class Home_Fragment extends Fragment {
 
     private void Init() {
         stringList = new ArrayList<>();
-        stringList.add("预约顾客" + 0 + "位");
-        stringList.add("到期顾客" + 0 + "位");
-        stringList.add("今日" + 0 + "位顾客生日");
+        stringList.add("预约顾客  " + 0 + "  位");
+        stringList.add("到期顾客  " + 0 + "  位");
+        stringList.add("今日  " + 0 + "  位顾客生日");
         listView_adapter = new Home_Fragment_ListView_Adapter(getActivity(), stringList);
         Content();
     }
@@ -83,24 +85,24 @@ public class Home_Fragment extends Fragment {
         fragmentHomeDate.setText("日期:" + DateUtils.formatDate(new Date(), DateUtils.yyyyMMDD));
         fragmentHomeListView.setAdapter(listView_adapter);
 
-        ASimpleCache.get(getActivity()).put("birthdayTemplateA", "今天是你的生日，我求上帝赐给你世界上最宝贵的礼物，上帝说就赐给你一生平安！一世健康！这两样礼物你满意吗？祝生日快乐！");
-        ASimpleCache.get(getActivity()).put("birthdayTemplateB", "今天你快乐吗？我知道你肯定说不快乐，因为我的祝福还没有到啊，送你一份生日礼物。希望你年年有今日，岁岁有今朝。");
-        ASimpleCache.get(getActivity()).put("birthdayTemplateC", "长长的距离，长长的线，长长的思念永不断；长长的时间，长长的挂念，长长的友谊永不变，祝你金钱不缺，微笑不断，笑容洒遍每一天。生日快乐！");
+        ASimpleCache.get(getActivity()).put(TagName.BirthdayTemplateA, "今天是你的生日，我求上帝赐给你世界上最宝贵的礼物，上帝说就赐给你一生平安！一世健康！这两样礼物你满意吗？祝生日快乐！");
+        ASimpleCache.get(getActivity()).put(TagName.BirthdayTemplateB, "今天你快乐吗？我知道你肯定说不快乐，因为我的祝福还没有到啊，送你一份生日礼物。希望你年年有今日，岁岁有今朝。");
+        ASimpleCache.get(getActivity()).put(TagName.BirthdayTemplateC, "长长的距离，长长的线，长长的思念永不断；长长的时间，长长的挂念，长长的友谊永不变，祝你金钱不缺，微笑不断，笑容洒遍每一天。生日快乐！");
         getData();
     }
 
     private void getData() {
         Map<String, String> map = new HashMap<String, String>();
-        map.put("uid", ApplicationTools.getUser().getObject().getId());
+        map.put("uid", ApplicationTools.getUser() == null ? "0" : ApplicationTools.getUser().getObject().getId());
         new VolleyUtil<>().post(ConfigUrl.Home_FragmentUrl, HomeHint_Model.class, Tag, map, new VolleyUtil.PostCallback() {
             @Override
             public void onSuccess(String result, List list) {
-                modelList = list;
+                HomeHint_Model model = new Gson().fromJson(result, HomeHint_Model.class);
                 stringList.clear();
-                stringList.add("预约顾客" + modelList.get(0).getObject().getAppointment() + "位");
-                stringList.add("到期顾客" + modelList.get(0).getObject().getOutdate() + "位");
-                stringList.add("今日" + modelList.get(0).getObject().getBirth() + "位顾客生日");
-                fragmentHomeDate.setText("日期:    " + modelList.get(0).getObject().getDatetime());
+                stringList.add("预约顾客  " + model.getObject().getAppointment() + "  位");
+                stringList.add("到期顾客  " + model.getObject().getOutdate() + "  位");
+                stringList.add("今日  " + model.getObject().getBirth() + "  位顾客生日");
+                fragmentHomeDate.setText("日期:    " + model.getObject().getDatetime());
                 listView_adapter.notifyDataSetChanged();
             }
 

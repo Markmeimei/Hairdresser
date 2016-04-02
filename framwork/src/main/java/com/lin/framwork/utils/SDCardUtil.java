@@ -19,7 +19,7 @@ public final class SDCardUtil {
     public static final File createFolder() {
         File file = null;
         if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
-            //得到一个路径，sdcard/kqx8
+            //得到一个路径，sdcard/zxkj
             String path = Environment.getExternalStorageDirectory().getPath() + "/zxkj";
             file = new File(path);
             if (!file.exists()) {

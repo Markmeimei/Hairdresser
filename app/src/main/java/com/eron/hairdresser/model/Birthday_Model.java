@@ -16,7 +16,6 @@ public class Birthday_Model {
 
     private String code;
     private String message;
-    private boolean show;   //显示（个人使用）
     /**
      * id : 1
      * serial : 222
@@ -61,14 +60,6 @@ public class Birthday_Model {
         this.object = object;
     }
 
-    public boolean isShow() {
-        return show;
-    }
-
-    public void setShow(boolean show) {
-        this.show = show;
-    }
-
     public static class ObjectBean {
         private String id;      //ID
         private String serial;
@@ -82,6 +73,7 @@ public class Birthday_Model {
         private String health;  //头发健康指数
         private String length;  //头发长度
         private String addtime; //添加时间
+        private boolean show;   //显示（个人使用）
 
         public String getId() {
             return id;
@@ -177,6 +169,14 @@ public class Birthday_Model {
 
         public void setAddtime(String addtime) {
             this.addtime = addtime;
+        }
+
+        public boolean isShow() {
+            return show;
+        }
+
+        public void setShow(boolean show) {
+            this.show = show;
         }
     }
 }

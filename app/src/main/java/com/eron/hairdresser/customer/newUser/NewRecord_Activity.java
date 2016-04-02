@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentActivity;
 import android.widget.LinearLayout;
 
 import com.eron.hairdresser.R;
-import com.eron.hairdresser.common.IntentTag;
+import com.eron.hairdresser.common.TagName;
 import com.eron.hairdresser.customer.SPA.SPA_Activity;
 import com.eron.hairdresser.customer.hairdressing.Hairdressing_Activity;
 import com.eron.hairdresser.customer.nutrition.Nutrition_Activity;
@@ -45,7 +45,7 @@ public class NewRecord_Activity extends FragmentActivity {
     }
 
     private void Content() {
-        intentTag = intent.getStringExtra(IntentTag.newRecordTag);
+        intentTag = intent.getStringExtra(TagName.newRecordTag);
         if (intentTag.equals(PermDye_Activity.Tag))
             getSupportFragmentManager().beginTransaction()
                     .add(activityNewUserLinearLayout01.getId(), new NewUser_Fragment())
