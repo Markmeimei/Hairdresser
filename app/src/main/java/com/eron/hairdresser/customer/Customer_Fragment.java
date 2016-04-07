@@ -84,7 +84,7 @@ public class Customer_Fragment extends Fragment {
                 IntentUtil.goToContext(getActivity(), SPA_Activity.class);
                 break;
             case 3:
-                IntentUtil.goToContext(getActivity(), Hairdressing_Activity.class);
+//                IntentUtil.goToContext(getActivity(), Hairdressing_Activity.class);
                 break;
         }
     }

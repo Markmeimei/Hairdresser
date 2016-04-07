@@ -2,15 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.eron.hairdresser">
 
-    <!-- 打电话 -->
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <!-- 发送短信 -->
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <!-- 访问网络 -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- 允许应用写（非读）用户的外部存储器 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
     <application
         android:name="com.lin.framwork.application.MyApplication"
         android:allowBackup="true"

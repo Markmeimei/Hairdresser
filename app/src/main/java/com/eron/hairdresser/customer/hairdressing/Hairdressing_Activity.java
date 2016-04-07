@@ -13,11 +13,16 @@ import com.eron.hairdresser.customer.Details_Activity;
 import com.eron.hairdresser.customer.newUser.NewRecord_Activity;
 import com.eron.hairdresser.model.Customer_Model;
 import com.eron.hairdresser.views.headTitle.HeadTitle;
+import com.lin.framwork.application.ApplicationTools;
+import com.lin.framwork.config.ConfigUrl;
 import com.lin.framwork.utils.IntentUtil;
+import com.lin.framwork.utils.VolleyUtil;
 import com.lin.framwork.views.PopupWindow_Control.PopupWindowListView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -35,6 +40,7 @@ public class Hairdressing_Activity extends AppCompatActivity {
     TextView activityHairdressingFiltrate;
 
     private Hairdressing_Activity_ListView_Adapter listView_adapter;
+    private Map<String, String> map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +51,7 @@ public class Hairdressing_Activity extends AppCompatActivity {
     }
 
     private void Init() {
+        map = new HashMap<>();
         List<Customer_Model> modelList = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
             Customer_Model model = new Customer_Model();
@@ -70,8 +77,13 @@ public class Hairdressing_Activity extends AppCompatActivity {
                 IntentUtil.goToContext(Hairdressing_Activity.this, NewRecord_Activity.class, TagName.newRecordTag, Tag);
             }
         });
-
         activityHairdressingListView.setAdapter(listView_adapter);
+        getData();
+    }
+
+    private void getData() {
+        map.put("uid", ApplicationTools.getUser().getObject().getId());
+        new VolleyUtil<>().post(ConfigUrl.Customer_FragmentUrl, Tag, map);
     }
 
     @OnItemClick(R.id.activity_hairdressing_ListView)
@@ -86,16 +98,7 @@ public class Hairdressing_Activity extends AppCompatActivity {
         strings.add("1");
         strings.add("1");
         strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        PopupWindowListView windowListView = new PopupWindowListView(this, strings);
+        PopupWindowListView windowListView = new PopupWindowListView(this, strings, strings, strings);
         windowListView.showPopupWindow(activityHairdressingFiltrate);
     }
 }

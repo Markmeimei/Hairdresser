@@ -9,8 +9,10 @@ import com.eron.hairdresser.R;
 import com.eron.hairdresser.adapter.Details_Activity_ListView_Adapter;
 import com.eron.hairdresser.adapter.Details_Activity_ListView_Adapter02;
 import com.eron.hairdresser.adapter.Details_Activity_ListView_Adapter03;
+import com.eron.hairdresser.adapter.Details_Activity_ListView_Adapter04;
 import com.eron.hairdresser.common.TagName;
 import com.eron.hairdresser.customer.SPA.SPA_Activity;
+import com.eron.hairdresser.customer.hairdressing.Hairdressing_Activity;
 import com.eron.hairdresser.customer.nutrition.Nutrition_Activity;
 import com.eron.hairdresser.customer.permDye.PermDye_Activity;
 import com.eron.hairdresser.model.Customer_Model;
@@ -21,13 +23,16 @@ import com.eron.hairdresser.views.Views;
 import com.eron.hairdresser.views.headTitle.HeadTitle;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnItemClick;
 
 public class Details_Activity extends AppCompatActivity {
+    public final static String Tag = "Details_Activity";
 
     @Bind(R.id.activity_details_HeadTitle)
     HeadTitle activityDetailsHeadTitle;
@@ -35,6 +40,7 @@ public class Details_Activity extends AppCompatActivity {
     ListView fragmentCustomerListView;
 
     private Intent intent;
+    private Map<String, String> map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +52,8 @@ public class Details_Activity extends AppCompatActivity {
 
     private void Init() {
         intent = getIntent();
+        map = new HashMap<>();
 
-        List<Customer_Model> modelList = new ArrayList<>();
         Customer_Model model = new Customer_Model();
         model.setName("林炜智");
         model.setCardNumber("1111111111");
@@ -58,42 +64,26 @@ public class Details_Activity extends AppCompatActivity {
         model.setPhone("18888888888");
 
         if (intent.getStringExtra(TagName.DetailsTag).equals(PermDye_Activity.Tag)) {
-            List<PermDye_Model> list1 = new ArrayList<>();
-            for (int i = 0; i < 10; i++) {
-                PermDye_Model model1 = new PermDye_Model();
-                model1.setDate("2016.3.16");
-                model1.setProject("烫发");
-                model1.setHairstylistName("林炜智");
-                model1.setProduct("欧莱雅");
-                model1.setSatisfaction("优");
-                model1.setProduct("高");
-                model1.setType("热");
+            List<PermDye_Model.ObjectBean> list1 = new ArrayList<>();
+            for (int i = 0; i < 15; i++) {
+                PermDye_Model.ObjectBean model1 = new PermDye_Model.ObjectBean();
+                model1.setBirth("2016.04.06");
                 model1.setShow(false);
                 list1.add(model1);
             }
-            model.setPermDye_models(list1);
-            modelList.add(model);
-            Details_Activity_ListView_Adapter listView_adapter = new Details_Activity_ListView_Adapter(this, modelList.get(0).getPermDye_models());
-            fragmentCustomerListView.addHeaderView(Views.getDetailsFirst(this, modelList));
+            Details_Activity_ListView_Adapter listView_adapter = new Details_Activity_ListView_Adapter(this, list1);
+            fragmentCustomerListView.addHeaderView(Views.getDetailsFirst(this, model));
             fragmentCustomerListView.setAdapter(listView_adapter);
         } else if (intent.getStringExtra(TagName.DetailsTag).equals(Nutrition_Activity.Tag)) {
-            List<Nutrition_Model> list = new ArrayList<>();
+            List<Nutrition_Model.ObjectBean> list = new ArrayList<>();
             for (int i = 0; i < 10; i++) {
-                Nutrition_Model model1 = new Nutrition_Model();
-                model1.setDate("2016.3.16");
-                model1.setProject("营养");
-                model1.setProduct("欧莱雅ss");
-                model1.setProduct2("欧莱雅ss");
-                model1.setFurnishing("dsadsass");
-                model1.setStoresUse("dsadsass");
-                model1.setDiagnosis("dsadsass");
+                Nutrition_Model.ObjectBean model1 = new Nutrition_Model.ObjectBean();
+                model1.setVipcode("2016.04.06");
                 model1.setShow(false);
                 list.add(model1);
             }
-            model.setNutrition_models(list);
-            modelList.add(model);
-            Details_Activity_ListView_Adapter02 listView_adapter02 = new Details_Activity_ListView_Adapter02(this, modelList.get(0).getNutrition_models());
-            fragmentCustomerListView.addHeaderView(Views.getDetailsFirst(this, modelList));
+            Details_Activity_ListView_Adapter02 listView_adapter02 = new Details_Activity_ListView_Adapter02(this, list);
+            fragmentCustomerListView.addHeaderView(Views.getDetailsFirst(this, model));
             fragmentCustomerListView.setAdapter(listView_adapter02);
         } else if (intent.getStringExtra(TagName.DetailsTag).equals(SPA_Activity.Tag)) {
             List<SPA_Model> list = new ArrayList<>();
@@ -109,16 +99,23 @@ public class Details_Activity extends AppCompatActivity {
                 model1.setShow(false);
                 list.add(model1);
             }
-            model.setSpa_models(list);
-            modelList.add(model);
-            Details_Activity_ListView_Adapter03 listView_adapter03 = new Details_Activity_ListView_Adapter03(this, modelList.get(0).getSpa_models());
-            fragmentCustomerListView.addHeaderView(Views.getDetailsFirst(this, modelList));
+            Details_Activity_ListView_Adapter03 listView_adapter03 = new Details_Activity_ListView_Adapter03(this, list);
+            fragmentCustomerListView.addHeaderView(Views.getDetailsFirst(this, model));
             fragmentCustomerListView.setAdapter(listView_adapter03);
+        } else if (intent.getStringExtra(TagName.DetailsTag).equals(Hairdressing_Activity.Tag)) {
+
+//            Details_Activity_ListView_Adapter04 listView_adapter04 = new Details_Activity_ListView_Adapter04(this, modelList.get(0).getPermDye_models());
+            fragmentCustomerListView.addHeaderView(Views.getDetailsFirst(this, model));
+//            fragmentCustomerListView.setAdapter(listView_adapter04);
         }
         Content();
     }
 
     private void Content() {
+        getData();
+    }
+
+    private void getData() {
 
     }
 

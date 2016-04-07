@@ -65,7 +65,6 @@ public class CompanyProfile_Activity extends AppCompatActivity {
         if (intent.getStringExtra(TagName.ReadTag).equals("4")) {
             map.put("id", "4");
         }
-
         getData();
     }
 
@@ -74,7 +73,8 @@ public class CompanyProfile_Activity extends AppCompatActivity {
             @Override
             public void onSuccess(String result, List list) {
                 CompanyProfile_Model model = new Gson().fromJson(result, CompanyProfile_Model.class);
-                activityCompanyProfileWebView.loadDataWithBaseURL(null, model.getObject().getCont(), "text/html", "UTF-8", null);
+                if (model.getObject() != null)
+                    activityCompanyProfileWebView.loadDataWithBaseURL(null, model.getObject().getCont(), "text/html", "UTF-8", null);
             }
 
             @Override

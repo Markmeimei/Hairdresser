@@ -59,7 +59,7 @@
                     android:layout_toRightOf="@id/activity_add_form_TextView01"
                     android:paddingLeft="@dimen/dimen_20"
                     android:paddingRight="@dimen/dimen_20"
-                    android:scaleType="fitXY"
+                    android:scaleType="center"
                     android:src="@mipmap/icon_perm_before" />
             </RelativeLayout>
 

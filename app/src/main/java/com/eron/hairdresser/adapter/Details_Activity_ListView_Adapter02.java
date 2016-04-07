@@ -25,9 +25,9 @@ import butterknife.ButterKnife;
 public class Details_Activity_ListView_Adapter02 extends BaseAdapter {
     private LayoutInflater inflater;
     private Context context;
-    private List<Nutrition_Model> modelList;
+    private List<Nutrition_Model.ObjectBean> modelList;
 
-    public Details_Activity_ListView_Adapter02(Context context, List<Nutrition_Model> list) {
+    public Details_Activity_ListView_Adapter02(Context context, List<Nutrition_Model.ObjectBean> list) {
         this.inflater = LayoutInflater.from(context);
         this.context = context;
         this.modelList = list;
@@ -58,13 +58,13 @@ public class Details_Activity_ListView_Adapter02 extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        String Date = convertView.getResources().getString(R.string.activity_details_date) + modelList.get(position).getDate();
-        String Project = convertView.getResources().getString(R.string.activity_details_project) + modelList.get(position).getProject();
-        String Product = convertView.getResources().getString(R.string.activity_details_project) + modelList.get(position).getProduct();
-        String Diagnosis = convertView.getResources().getString(R.string.activity_details_diagnosis) + modelList.get(position).getDiagnosis();
-        String Product2 = convertView.getResources().getString(R.string.activity_details_product2) + modelList.get(position).getProduct2();
-        String StoresUse = convertView.getResources().getString(R.string.activity_details_storesuse) + modelList.get(position).getStoresUse();
-        String Furnishing = convertView.getResources().getString(R.string.activity_details_furnishing) + modelList.get(position).getFurnishing();
+        String Date = convertView.getResources().getString(R.string.activity_details_date) + modelList.get(position).getVipcode();
+        String Project = convertView.getResources().getString(R.string.activity_details_project) + modelList.get(position).getViptype();
+        String Product = convertView.getResources().getString(R.string.activity_details_project) + modelList.get(position).getViptype();
+        String Diagnosis = convertView.getResources().getString(R.string.activity_details_diagnosis) + modelList.get(position).getViptype();
+        String Product2 = convertView.getResources().getString(R.string.activity_details_product2) + modelList.get(position).getViptype();
+        String StoresUse = convertView.getResources().getString(R.string.activity_details_storesuse) + modelList.get(position).getViptype();
+        String Furnishing = convertView.getResources().getString(R.string.activity_details_furnishing) + modelList.get(position).getViptype();
 
         holder.adapterDetailsActivityListview02Date.setText(SpannableStringUtil.getForegroundColor(Date, convertView.getResources().getColor(R.color.text_color1), 4, Date.length()));
         holder.adapterDetailsActivityListview02Project.setText(SpannableStringUtil.getForegroundColor(Project, convertView.getResources().getColor(R.color.text_color1), 4, Project.length()));
@@ -77,7 +77,7 @@ public class Details_Activity_ListView_Adapter02 extends BaseAdapter {
         holder.adapterDetailsActivityListview02LinearLayoutUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (modelList.get(position).getShow() == false) {
+                if (modelList.get(position).isShow() == false) {
                     holder.adapterDetailsActivityListview02LinearLayoutDown.setVisibility(View.VISIBLE);
                     modelList.get(position).setShow(true);
                 } else {

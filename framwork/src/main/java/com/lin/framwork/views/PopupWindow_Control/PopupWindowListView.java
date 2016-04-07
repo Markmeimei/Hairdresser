@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.view.ViewGroup.LayoutParams;
@@ -22,18 +23,25 @@ import butterknife.ButterKnife;
 public class PopupWindowListView extends PopupWindow {
     private View view;
 
-    public PopupWindowListView(Activity context, List<String> list01) {
+    public PopupWindowListView(Activity context, List<String> list01, List<String> list02, List<String> list03) {
         view = LayoutInflater.from(context).inflate(R.layout.views_popupwindow_listview, null);
 
         ListView listView01 = ButterKnife.findById(view, R.id.views_popupwindow_listview_ListView01);
-        ListView listView02 = ButterKnife.findById(view, R.id.views_popupwindow_listview_ListView02);
-        ListView listView03 = ButterKnife.findById(view, R.id.views_popupwindow_listview_ListView03);
+        final ListView listView02 = ButterKnife.findById(view, R.id.views_popupwindow_listview_ListView02);
+        final ListView listView03 = ButterKnife.findById(view, R.id.views_popupwindow_listview_ListView03);
 
-        ArrayAdapter<String> listView01_adapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item, list01);
+        Adapter_PopupWindowListView listView01_adapter = new Adapter_PopupWindowListView(context, list01);
+        final Adapter_PopupWindowListView listView02_adapter = new Adapter_PopupWindowListView(context, list02);
+        final Adapter_PopupWindowListView listView03_adapter = new Adapter_PopupWindowListView(context, list03);
 
         listView01.setAdapter(listView01_adapter);
-        listView02.setAdapter(listView01_adapter);
-        listView03.setAdapter(listView01_adapter);
+        listView01.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                listView02.setAdapter(listView02_adapter);
+                listView03.setAdapter(listView03_adapter);
+            }
+        });
 
         int h = context.getWindowManager().getDefaultDisplay().getHeight();
         int w = context.getWindowManager().getDefaultDisplay().getWidth();

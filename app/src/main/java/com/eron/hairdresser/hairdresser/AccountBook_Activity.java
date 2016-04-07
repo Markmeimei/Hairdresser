@@ -52,11 +52,12 @@ public class AccountBook_Activity extends AppCompatActivity {
 
     private void Init() {
         fragments = new ArrayList<>();
-        fragments.add(new Expire_Fragment());
-        fragments.add(new Expire_Fragment());
-        fragments.add(new Expire_Fragment());
-        fragments.add(new Expire_Fragment());
-        fragments.add(new Expire_Fragment());
+        fragments.add(new AccountBook_Fragment());
+//        fragments.add(new AccountBook_Fragment());
+//        fragments.add(new AccountBook_Fragment());
+//        fragments.add(new AccountBook_Fragment());
+//        fragments.add(new AccountBook_Fragment());
+        activityAccountBookRadioGroup.setVisibility(View.GONE);
         viewPager_adapter = new Expire_Activity_ViewPager_Adapter(getSupportFragmentManager(), fragments);
         Content();
     }

@@ -10,6 +10,8 @@ public class Config {
 
     private final static String Path = "mobile.mysql.php?act=";
 
+    private final static String VersionUrl = "http://10.9.17.193:8080/msmhaircut/download/version.xml";     //版本更新
+
     /**
      * 基础Url
      */
@@ -19,5 +21,9 @@ public class Config {
 
     public static String getUrlPath() {
         return Url + BasePath + Path;
+    }
+
+    public static String getVersionUrl() {
+        return VersionUrl;
     }
 }

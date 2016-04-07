@@ -25,9 +25,9 @@ import butterknife.ButterKnife;
 public class Details_Activity_ListView_Adapter extends BaseAdapter {
     private LayoutInflater inflater;
     private Context context;
-    private List<PermDye_Model> modelList;
+    private List<PermDye_Model.ObjectBean> modelList;
 
-    public Details_Activity_ListView_Adapter(Context context, List<PermDye_Model> list) {
+    public Details_Activity_ListView_Adapter(Context context, List<PermDye_Model.ObjectBean> list) {
         this.inflater = LayoutInflater.from(context);
         this.context = context;
         this.modelList = list;
@@ -58,12 +58,12 @@ public class Details_Activity_ListView_Adapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        String Date = convertView.getResources().getString(R.string.activity_details_date) + modelList.get(position).getDate();
-        String Project = convertView.getResources().getString(R.string.activity_details_project) + modelList.get(position).getProject();
-        String HairstylistName = convertView.getResources().getString(R.string.activity_details_hairstylistname) + modelList.get(position).getHairstylistName();
-        String Product = convertView.getResources().getString(R.string.activity_details_product) + modelList.get(position).getProduct();
-        String Type = convertView.getResources().getString(R.string.activity_details_type) + modelList.get(position).getType();
-        String Satisfaction = convertView.getResources().getString(R.string.activity_details_satisfaction) + modelList.get(position).getSatisfaction();
+        String Date = convertView.getResources().getString(R.string.activity_details_date) + modelList.get(position).getBirth();
+        String Project = convertView.getResources().getString(R.string.activity_details_project) + modelList.get(position).getBirth();
+        String HairstylistName = convertView.getResources().getString(R.string.activity_details_hairstylistname) + modelList.get(position).getBirth();
+        String Product = convertView.getResources().getString(R.string.activity_details_product) + modelList.get(position).getBirth();
+        String Type = convertView.getResources().getString(R.string.activity_details_type) + modelList.get(position).getBirth();
+        String Satisfaction = convertView.getResources().getString(R.string.activity_details_satisfaction) + modelList.get(position).getBirth();
         //第一个显示内容
 //        if (position == 0) {
 //            holder.adapterDetailsActivityListviewLinearLayoutDown.setVisibility(View.VISIBLE);
@@ -78,7 +78,7 @@ public class Details_Activity_ListView_Adapter extends BaseAdapter {
         holder.adapterDetailsActivityListviewLinearLayoutUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (modelList.get(position).getShow() == false) {
+                if (modelList.get(position).isShow() == false) {
                     holder.adapterDetailsActivityListviewLinearLayoutDown.setVisibility(View.VISIBLE);
                     modelList.get(position).setShow(true);
                 } else {

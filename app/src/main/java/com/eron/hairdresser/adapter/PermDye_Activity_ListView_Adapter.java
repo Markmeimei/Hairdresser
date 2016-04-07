@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.eron.hairdresser.R;
 import com.eron.hairdresser.model.Customer_Model;
+import com.eron.hairdresser.model.PermDye_Model;
 
 import java.util.List;
 
@@ -22,9 +23,9 @@ import butterknife.ButterKnife;
 public class PermDye_Activity_ListView_Adapter extends BaseAdapter {
     private LayoutInflater inflater;
     private Context context;
-    private List<Customer_Model> modelList;
+    private List<PermDye_Model.ObjectBean> modelList;
 
-    public PermDye_Activity_ListView_Adapter(Context context, List<Customer_Model> list) {
+    public PermDye_Activity_ListView_Adapter(Context context, List<PermDye_Model.ObjectBean> list) {
         this.inflater = LayoutInflater.from(context);
         this.context = context;
         this.modelList = list;
@@ -55,7 +56,7 @@ public class PermDye_Activity_ListView_Adapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        if (modelList.get(position).getCardVariety() == 1) {
+        if (modelList.get(position).getViptype().equals("1")) {
             holder.adapterPermdyeActivityListviewLinearLayout.setBackgroundColor(convertView.getResources().getColor(R.color.adapter_permdye_activity_listview_8zhe));
             holder.adapterPermdyeActivityListviewVariety.setText("8折");
         } else {
@@ -63,7 +64,7 @@ public class PermDye_Activity_ListView_Adapter extends BaseAdapter {
             holder.adapterPermdyeActivityListviewVariety.setText("感恩");
         }
         holder.adapterPermdyeActivityListviewName.setText(modelList.get(position).getName());
-        holder.adapterPermdyeActivityListviewNumber.setText(modelList.get(position).getCardNumber());
+        holder.adapterPermdyeActivityListviewNumber.setText(modelList.get(position).getSerial());
         return convertView;
     }
 

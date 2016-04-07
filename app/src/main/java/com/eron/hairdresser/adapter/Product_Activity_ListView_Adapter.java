@@ -57,7 +57,7 @@ public class Product_Activity_ListView_Adapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         Glide.with(context).load(modelList.get(position).getPicture())
-                .placeholder(R.mipmap.ic_launcher).error(R.mipmap.img_label).crossFade().into(holder.adapterProductActivityListviewImgaeView);
+                .placeholder(R.mipmap.img_default_loading).error(R.mipmap.img_default_error).crossFade().into(holder.adapterProductActivityListviewImgaeView);
         holder.adapterProductActivityListviewName.setText(modelList.get(position).getTitle());
         holder.adapterProductActivityListviewType.setText("类型    " + modelList.get(position).getType());
         holder.adapterProductActivityListviewPrice.setText("价格    " + modelList.get(position).getAddtime());

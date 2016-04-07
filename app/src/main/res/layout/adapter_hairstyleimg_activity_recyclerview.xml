@@ -20,8 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:scaleType="fitXY"
-            android:src="@mipmap/ic_company_profile" />
+            android:scaleType="fitXY" />
 
         <TextView
             android:id="@+id/adapter_hairstyleimg_activity_recyclerview_TextView"
@@ -33,7 +32,6 @@
             android:background="@color/white"
             android:gravity="center"
             android:padding="@dimen/dimen_3"
-            android:text="发型一"
             android:textColor="@color/text_color"
             android:textSize="16sp" />
     </RelativeLayout>

@@ -18,8 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_200"
         android:layout_marginTop="@dimen/dimen_20"
-        android:background="@color/white"
-        android:src="@mipmap/ic_company_profile" />
+        android:background="@color/white" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -104,7 +103,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.8"
                     android:padding="@dimen/dimen_10"
-                    android:text="sssssssssssssssssssssssssssssssssssssssssssssssssssssss"
                     android:textColor="@color/text_color1"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -132,7 +130,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.8"
                     android:padding="@dimen/dimen_10"
-                    android:text="sssssssssssssssssssssssssssssssssssssssssssssssssssssss"
                     android:textColor="@color/text_color1"
                     android:textSize="16sp" />
             </LinearLayout>

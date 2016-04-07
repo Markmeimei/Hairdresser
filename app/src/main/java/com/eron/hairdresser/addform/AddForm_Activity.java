@@ -1,6 +1,7 @@
 package com.eron.hairdresser.addform;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
@@ -117,6 +118,7 @@ public class AddForm_Activity extends AppCompatActivity {
 
     private AddForm_Activity_ListView_Adapter listView_adapter;
     private List<AddForm_Model> modelList;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,6 +130,7 @@ public class AddForm_Activity extends AppCompatActivity {
     }
 
     private void Init() {
+        intent = getIntent();
         modelList = new ArrayList<>();
         AddForm_Model model = new AddForm_Model();
         List<String> strings = new ArrayList<>();

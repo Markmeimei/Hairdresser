@@ -171,7 +171,7 @@ public final class IntentUtil {
      * @param phoneNumber 手机号码
      */
     public static void dialPhones(Context context, String phoneNumber) {
-        if (phoneNumber == null || phoneNumber.length() < 1) {
+        if (phoneNumber == null || phoneNumber.length() < 3) {
             return;
         }
         Uri uri = Uri.parse("tel:" + phoneNumber);

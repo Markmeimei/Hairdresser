@@ -11,4 +11,6 @@ public class ConfigUrl {
     public final static String CompanyProfile_ActivityUrl = Config.getUrlPath() + "art_cat_info";      //公司简介、升迁制度、规章制度  Post
     public final static String Product_ActivityUrl = Config.getUrlPath() + "product_list";      //产品列表  Post
     public final static String HairStyleImg_ActivityUrl = Config.getUrlPath() + "article_list"; //发型图片  Post
+    public final static String Customer_FragmentUrl = Config.getUrlPath() + "consumer_list"; //顾客列表  Post
+    public final static String ProductDetails_ActivityUrl = Config.getUrlPath() + "product_info"; //产品详细列表  Post
 }

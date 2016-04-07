@@ -95,7 +95,6 @@
 
     <!--业绩查询-->
     <string name="check_achievement_title">业绩查询</string>
-    <string name="check_achievement_week">按周</string>
     <string name="check_achievement_perm">烫发</string>
     <string name="check_achievement_color">染发</string>
     <string name="check_achievement_nursing">护理</string>

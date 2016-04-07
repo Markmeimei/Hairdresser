@@ -16,8 +16,7 @@
             android:id="@+id/adapter_product_activity_listview_ImgaeView"
             android:layout_width="@dimen/dimen_80"
             android:layout_height="@dimen/dimen_80"
-            android:scaleType="fitXY"
-            android:src="@mipmap/ic_company_profile" />
+            android:scaleType="fitXY" />
 
         <LinearLayout
             android:layout_width="match_parent"

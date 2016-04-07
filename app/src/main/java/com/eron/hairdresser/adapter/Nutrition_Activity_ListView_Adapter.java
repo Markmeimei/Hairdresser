@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.eron.hairdresser.R;
 import com.eron.hairdresser.model.Customer_Model;
+import com.eron.hairdresser.model.Nutrition_Model;
 
 import java.util.List;
 
@@ -22,9 +23,9 @@ import butterknife.ButterKnife;
 public class Nutrition_Activity_ListView_Adapter extends BaseAdapter {
     private LayoutInflater inflater;
     private Context context;
-    private List<Customer_Model> modelList;
+    private List<Nutrition_Model.ObjectBean> modelList;
 
-    public Nutrition_Activity_ListView_Adapter(Context context, List<Customer_Model> list) {
+    public Nutrition_Activity_ListView_Adapter(Context context, List<Nutrition_Model.ObjectBean> list) {
         this.inflater = LayoutInflater.from(context);
         this.context = context;
         this.modelList = list;
@@ -55,7 +56,7 @@ public class Nutrition_Activity_ListView_Adapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        if (modelList.get(position).getCardVariety() == 1) {
+        if (modelList.get(position).getViptype().equals("1")) {
             holder.adapterNutritionActivityListviewLinearLayout.setBackgroundColor(convertView.getResources().getColor(R.color.adapter_nutrition_activity_listview_8zhe));
             holder.adapterNutritionActivityListviewVariety.setText("8折");
         } else {
@@ -63,7 +64,7 @@ public class Nutrition_Activity_ListView_Adapter extends BaseAdapter {
             holder.adapterNutritionActivityListviewVariety.setText("感恩");
         }
         holder.adapterNutritionActivityListviewName.setText(modelList.get(position).getName());
-        holder.adapterNutritionActivityListviewNumber.setText(modelList.get(position).getCardNumber());
+        holder.adapterNutritionActivityListviewNumber.setText(modelList.get(position).getVipcode());
         return convertView;
     }
 

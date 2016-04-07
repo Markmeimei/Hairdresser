@@ -17,7 +17,9 @@ import com.lin.framwork.utils.IntentUtil;
 import com.lin.framwork.views.PopupWindow_Control.PopupWindowListView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -35,6 +37,7 @@ public class SPA_Activity extends AppCompatActivity {
     TextView activitySpaFiltrate;
 
     private SPA_Activity_ListView_Adapter listView_adapter;
+    private Map<String, String> map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,7 @@ public class SPA_Activity extends AppCompatActivity {
     }
 
     private void Init() {
+        map = new HashMap<>();
         List<Customer_Model> modelList = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
             Customer_Model model = new Customer_Model();
@@ -71,6 +75,10 @@ public class SPA_Activity extends AppCompatActivity {
             }
         });
         activitySpaListView.setAdapter(listView_adapter);
+        getData();
+    }
+
+    private void getData() {
     }
 
     @OnItemClick(R.id.activity_spa_ListView)
@@ -80,21 +88,38 @@ public class SPA_Activity extends AppCompatActivity {
 
     @OnClick(R.id.activity_spa_Filtrate)
     public void onClick() {
-        List<String> strings = new ArrayList<>();
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        strings.add("1");
-        PopupWindowListView windowListView = new PopupWindowListView(this, strings);
+        List<String> strings01 = new ArrayList<>();
+        strings01.add("1");
+        strings01.add("1");
+        strings01.add("1");
+        strings01.add("1");
+        strings01.add("1");
+        List<String> strings02 = new ArrayList<>();
+        strings02.add("2");
+        strings02.add("2");
+        strings02.add("2");
+        strings02.add("2");
+        strings02.add("2");
+        strings02.add("2");
+        strings02.add("2");
+        strings02.add("2");
+        strings02.add("2");
+        List<String> strings03 = new ArrayList<>();
+        strings03.add("3");
+        strings03.add("3");
+        strings03.add("3");
+        strings03.add("3");
+        strings03.add("3");
+        strings03.add("3");
+        strings03.add("3");
+        strings03.add("3");
+        strings03.add("3");
+        strings03.add("3");
+        strings03.add("3");
+        strings03.add("3");
+        strings03.add("3");
+        strings03.add("3");
+        PopupWindowListView windowListView = new PopupWindowListView(this, strings01, strings02, strings03);
         windowListView.showPopupWindow(activitySpaFiltrate);
     }
 }

@@ -14,6 +14,7 @@ import android.widget.ListView;
 import com.eron.hairdresser.R;
 import com.eron.hairdresser.adapter.AccountBook_Fragment_ListView_Adapter;
 import com.eron.hairdresser.adapter.Expire_Fragment_ListView_Adapter;
+import com.eron.hairdresser.addform.AddForm_Activity;
 import com.eron.hairdresser.model.Expire_Model;
 import com.lin.framwork.utils.IntentUtil;
 import com.lin.framwork.views.Toast_Control.Toast_Common;
@@ -31,6 +32,7 @@ import butterknife.OnItemClick;
  * Created by 林炜智 on 2016/3/31.
  */
 public class AccountBook_Fragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
+    public final static String Tag = "AccountBook_Fragment";
 
     @Bind(R.id.fragment_account_book_ListView)
     ListView fragmentAccountBookListView;
@@ -55,7 +57,6 @@ public class AccountBook_Fragment extends Fragment implements SwipeRefreshLayout
         if (parent != null) {
             parent.removeView(view);
         }
-        ButterKnife.bind(this, view);
         return view;
     }
 
@@ -76,24 +77,7 @@ public class AccountBook_Fragment extends Fragment implements SwipeRefreshLayout
 
     @OnItemClick(R.id.fragment_account_book_ListView)
     public void onItemClick(int position) {
-        showDialog(position);
-    }
-
-    private void showDialog(final int position) {
-        String[] AlertDialogItems = new String[]{"打电话", "发短信"};
-        new AlertDialog.Builder(getActivity()).setTitle("请选择").setItems(AlertDialogItems, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                switch (which) {
-                    case 0:
-                        IntentUtil.dialPhones(getActivity(), modelList.get(0).getObject().get(position).getPhone());
-                        break;
-                    case 1:
-                        IntentUtil.sendMessage(getActivity(), modelList.get(0).getObject().get(position).getPhone(), "");
-                        break;
-                }
-            }
-        }).show();
+        IntentUtil.goToContext(getActivity(), AddForm_Activity.class, Tag, Tag);
     }
 
     @Override

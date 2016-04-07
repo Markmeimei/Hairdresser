@@ -40,10 +40,10 @@ public class Views {
     }
 
     //详细资料
-    public static View getDetailsFirst(Context context, List<Customer_Model> list) {
+    public static View getDetailsFirst(Context context, Customer_Model model) {
         if (context == null)
             return null;
-        else if (list == null || list.size() == 0)
+        else if (model == null)
             return getDefaultNull(context);
         else {
             View view = View.inflate(context, R.layout.views_details_first, null);
@@ -56,18 +56,18 @@ public class Views {
             TextView viewsDetailsFirstHairLength = ButterKnife.findById(view, R.id.views_details_first_HairLength);
             TextView viewsDetailsFirstPhone = ButterKnife.findById(view, R.id.views_details_first_Phone);
 
-            String Name = context.getResources().getString(R.string.activity_details_guest) + list.get(0).getName();
-            String CardNumber = context.getResources().getString(R.string.activity_details_cardnumber) + list.get(0).getCardNumber();
+            String Name = context.getResources().getString(R.string.activity_details_guest) + model.getName();
+            String CardNumber = context.getResources().getString(R.string.activity_details_cardnumber) + model.getCardNumber();
             String CardVariety = "";
-            if (list.get(0).getCardVariety() == 1)
+            if (model.getCardVariety() == 1)
                 CardVariety = context.getResources().getString(R.string.activity_details_cardvariety) + "8折";
             else
                 CardVariety = context.getResources().getString(R.string.activity_details_cardvariety) + "感恩";
-            String Gender = context.getResources().getString(R.string.activity_details_gender) + list.get(0).getGender();
-            String Birthday = context.getResources().getString(R.string.activity_details_birthday) + list.get(0).getBirthday();
-            String Quality = context.getResources().getString(R.string.activity_details_quality) + list.get(0).getQuality();
-            String HairLength = context.getResources().getString(R.string.activity_details_hairlength) + list.get(0).getHairLength();
-            String Phone = context.getResources().getString(R.string.activity_details_phone) + list.get(0).getPhone();
+            String Gender = context.getResources().getString(R.string.activity_details_gender) + model.getGender();
+            String Birthday = context.getResources().getString(R.string.activity_details_birthday) + model.getBirthday();
+            String Quality = context.getResources().getString(R.string.activity_details_quality) + model.getQuality();
+            String HairLength = context.getResources().getString(R.string.activity_details_hairlength) + model.getHairLength();
+            String Phone = context.getResources().getString(R.string.activity_details_phone) + model.getPhone();
 
             viewsDetailsFirstName.setText(SpannableStringUtil.getForegroundColor(Name, context.getResources().getColor(R.color.text_color1), 4, Name.length()));
             viewsDetailsFirstCardNumber.setText(SpannableStringUtil.getForegroundColor(CardNumber, context.getResources().getColor(R.color.text_color1), 4, CardNumber.length()));

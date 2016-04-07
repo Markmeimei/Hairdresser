@@ -62,7 +62,7 @@ public class Expire_Fragment extends Fragment implements SwipeRefreshLayout.OnRe
     }
 
     private void Init() {
-        map = new HashMap<String, String>();
+        map = new HashMap<>();
         handler = new Handler();
         modelList = new ArrayList<>();
         listView_adapter = new Expire_Fragment_ListView_Adapter(getActivity(), modelList);

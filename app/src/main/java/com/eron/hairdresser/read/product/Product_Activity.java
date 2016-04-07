@@ -64,13 +64,13 @@ public class Product_Activity extends AppCompatActivity implements SwipeRefreshL
     }
 
     private void Content() {
-        if (intent.getStringExtra(TagName.ReadTag).equals("2")) {
+        if (intent.getStringExtra(TagName.ReadTag).equals("1")) {
             map.put("cat", "1");
         }
-        if (intent.getStringExtra(TagName.ReadTag).equals("3")) {
+        if (intent.getStringExtra(TagName.ReadTag).equals("2")) {
             map.put("cat", "2");
         }
-        if (intent.getStringExtra(TagName.ReadTag).equals("4")) {
+        if (intent.getStringExtra(TagName.ReadTag).equals("3")) {
             map.put("cat", "3");
         }
         activityProductListView.setAdapter(listView_adapter);
@@ -98,7 +98,7 @@ public class Product_Activity extends AppCompatActivity implements SwipeRefreshL
 
     @OnItemClick(R.id.activity_product_ListView)
     public void onItemClick(int position) {
-        IntentUtil.goToContext(this, ProductDetails_Activity.class);
+        IntentUtil.goToContext(this, ProductDetails_Activity.class, Tag, modelList.get(position).getId());
     }
 
     @Override

@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.eron.hairdresser.R;
 import com.eron.hairdresser.model.HairStyleImg_Model;
 
@@ -21,11 +22,11 @@ import butterknife.ButterKnife;
  * Created by 林炜智 on 2016/3/16.
  */
 public class HairStyleImg_Activity_RecyclerView_Adapter extends RecyclerView.Adapter<HairStyleImg_Activity_RecyclerView_Adapter.ViewHolder> {
-    private List<HairStyleImg_Model> modelList;
+    private List<HairStyleImg_Model.ObjectBean> modelList;
     private LayoutInflater inflater;
     private Context context;
 
-    public HairStyleImg_Activity_RecyclerView_Adapter(Context context, List<HairStyleImg_Model> list) {
+    public HairStyleImg_Activity_RecyclerView_Adapter(Context context, List<HairStyleImg_Model.ObjectBean> list) {
         this.context = context;
         this.modelList = list;
         this.inflater = LayoutInflater.from(context);
@@ -39,7 +40,8 @@ public class HairStyleImg_Activity_RecyclerView_Adapter extends RecyclerView.Ada
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.adapterHairstyleimgActivityRecyclerviewImageView.setImageResource(modelList.get(position).getImg());
+        Glide.with(context).load(modelList.get(position).getThumb())
+                .placeholder(R.mipmap.img_default_loading).error(R.mipmap.img_default_error).crossFade().into(holder.adapterHairstyleimgActivityRecyclerviewImageView);
         holder.adapterHairstyleimgActivityRecyclerviewTextView.setText(modelList.get(position).getTitle());
         if (itemClickLitener != null) {
             holder.adapterHairstyleimgActivityRecyclerviewRelativeLayout.setOnClickListener(new View.OnClickListener() {

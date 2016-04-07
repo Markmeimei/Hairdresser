@@ -57,7 +57,11 @@ public class Adapter_PopupWindowListView extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         holder.adapterPopupwindowListviewTextView.setText(stringList.get(position));
-        holder.adapterPopupwindowListviewTextView.setSelected(true);
+        if (holder.adapterPopupwindowListviewTextView.isSelected()) {
+            holder.adapterPopupwindowListviewTextView.setBackgroundColor(context.getResources().getColor(R.color.color_EDEDED));
+        } else {
+            holder.adapterPopupwindowListviewTextView.setBackgroundColor(context.getResources().getColor(R.color.color_FFFFFF));
+        }
         return convertView;
     }
 

@@ -87,7 +87,7 @@ public class VolleyUtil<T> implements Serializable {
                     jsonString = "{\"data\":" + jsonString + "}";
                 else
                     jsonString = response;
-                final CommonJson<T> jsonList = CommonJson.fromJson(jsonString.replace("T", " "), clss);
+                final CommonJson<T> jsonList = CommonJson.fromJson(jsonString, clss);
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
